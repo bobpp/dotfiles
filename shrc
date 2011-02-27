@@ -1,0 +1,28 @@
+# Enviroments Variables
+export PATH=~/.vim/bin:$PATH:$HOME/bin:$HOME/local/bin
+export LANG=en_US.UTF-8
+export JLESSCHARSET=japanese
+export EDITOR=vim
+
+# Alias
+alias ll='ls -l'
+alias la='ls -la'
+alias vi=vim
+alias screen='screen -U'
+alias today="date '+%Y%m%d'"
+alias view='vim -R'
+
+# ssh new window w/screen
+function ssh_screen() {
+	# 引数が二つ以上の際はSSH経由のコマンド実行としてscreenは増やさない
+	if (( $#@ > 1)); then
+		command ssh "$@"
+	else
+		eval server=\${$#}
+		screen -t "-> $server" ssh "$@"
+	fi
+}
+if [ x$TERM = xscreen ]; then
+	alias ssh=ssh_screen
+fi
+
