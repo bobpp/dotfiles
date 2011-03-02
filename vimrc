@@ -81,62 +81,6 @@ let g:rails_default_file="app/controllers/application.rb"
 let g:rails_default_database="sqlite3"
 
 "==============================================================================
-" minibufexpl.vim
-"==============================================================================
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBuffs = 1
-nmap <Space> :MBEbn<CR>
-" GNU screen like なキーバインド
-let mapleader = "^F"
-nnoremap <Leader><Space> :MBEbn<CR>
-nnoremap <Leader>n       :MBEbn<CR>
-nnoremap <Leader><C-n>   :MBEbn<CR>
-nnoremap <Leader>p       :MBEbp<CR>
-nnoremap <Leader><C-p>   :MBEbp<CR>
-nnoremap <Leader>c       :new<CR>
-nnoremap <Leader><C-c>   :new<CR>
-nnoremap <Leader>k       :bd<CR>
-nnoremap <Leader><C-k>   :bd<CR>
-nnoremap <Leader>s       :IncBufSwitch<CR>
-nnoremap <Leader><C-s>   :IncBufSwitch<CR>
-nnoremap <Leader><Tab>   :wincmd w<CR>
-nnoremap <Leader>Q       :only<CR>
-nnoremap <Leader>w       :ls<CR>
-nnoremap <Leader><C-w>   :ls<CR>
-nnoremap <Leader>a       :e #<CR>
-nnoremap <Leader><C-a>   :e #<CR>
-nnoremap <Leader>"       :BufExp<CR>
-nnoremap <Leader>1   :e #1<CR>
-nnoremap <Leader>2   :e #2<CR>
-nnoremap <Leader>3   :e #3<CR>
-nnoremap <Leader>4   :e #4<CR>
-nnoremap <Leader>5   :e #5<CR>
-nnoremap <Leader>6   :e #6<CR>
-nnoremap <Leader>7   :e #7<CR>
-nnoremap <Leader>8   :e #8<CR>
-nnoremap <Leader>9   :e #9<CR>
-
-"==============================================================================
-" fuf.vim
-"==============================================================================
-let g:fuf_modesDisable = ['mrucmd']
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|bak|swp|gif|jpg|png)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-let g:fuf_mrufile_exclude = '\v\~$|\.bak$|\.swp|\.howm$|\.(gif|jpg|png)$'
-let g:fuf_mrufile_maxItem = 10000
-let g:fuf_enumeratingLimit = 20
-let g:fuf_keyPreview = '<C-]>'
-let g:fuf_previewHeight = 0
-
-nmap bg :FufBuffer<CR>
-nmap bG :FufFile <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
-nmap gb :FufFile **/<CR>
-nmap br :FufMruFile<CR>
-nmap bq :FufQuickfix<CR>
-nmap bl :FufLine<CR>
-nnoremap <silent> <C-]> :FufTag! <C-r>=expand('<cword>')<CR><CR> 
-
-"==============================================================================
 " neocomplecache
 "==============================================================================
 let g:neocomplcache_enable_at_startup = 1
