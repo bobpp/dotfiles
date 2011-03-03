@@ -3,8 +3,24 @@
 "==============================================================================
 set nocompatible
 syntax on
-filetype plugin indent on 
 set backspace=2
+
+"==============================================================================
+" load via pathogen
+"==============================================================================
+filetype off
+
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+set helpfile=$VIMRUNTIME/doc/help.txt
+
+filetype plugin indent on 
+
+"==============================================================================
+" color scheme
+"==============================================================================
+set t_Co=256
+colorscheme wombat256mod
 
 "==============================================================================
 " 検索とか
@@ -65,6 +81,11 @@ map <F5> :setlocal spell! spelllang=en_us<cr>
 autocmd BufNewFile *.php 0r ~/.vim/skeleton.php | normal GddOAOA
 
 "==============================================================================
+" Xslate.vim
+"==============================================================================
+autocmd BufNewFile,BufRead *.xt setfiletype xslate
+
+"==============================================================================
 " rubycomplete.vim
 "==============================================================================
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
@@ -79,6 +100,14 @@ let g:rails_level=4
 let g:rails_subversion=1
 let g:rails_default_file="app/controllers/application.rb"
 let g:rails_default_database="sqlite3"
+
+"==============================================================================
+" unite.vim
+"==============================================================================
+let g:unite_enable_start_insert = 1
+nmap bg :Unite -buffer-name=files buffer file<CR>
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 "==============================================================================
 " neocomplecache
@@ -166,9 +195,6 @@ function! GetEFstatus()
   unlet fenc
   return str
 endfunction
-
-" load via pathogen
-call pathogen#runtime_append_all_bundles()
 
 " Load .mine ファイル
 if filereadable($HOME . '/.vimrc.mine')

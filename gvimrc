@@ -2,10 +2,6 @@
 " MacVim用の設定
 "==============================================================================
 if has("gui_macvim")
-	" colorscheme
-	color blue
-	color macvim
-
 	" 透明度の設定
 	set transparency=10
 

@@ -34,6 +34,6 @@
 [submodule "vim/bundle/wombat256.vim"]
 	path = vim/bundle/wombat256.vim
 	url = git://github.com/vim-scripts/wombat256.vim.git
-[submodule "vim/bundle/desert256.vim"]
-	path = vim/bundle/desert256.vim
-	url = git://github.com/vim-scripts/desert256.vim.git
+[submodule "vim/bundle/xslate-vim"]
+	path = vim/bundle/xslate-vim
+	url = git://github.com/motemen/xslate-vim.git
