@@ -37,3 +37,6 @@
 [submodule "vim/bundle/xslate-vim"]
 	path = vim/bundle/xslate-vim
 	url = git://github.com/motemen/xslate-vim.git
+[submodule "vim/bundle/vim-wombat"]
+	path = vim/bundle/vim-wombat
+	url = git://github.com/cschlueter/vim-wombat.git
