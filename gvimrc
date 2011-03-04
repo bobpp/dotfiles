@@ -2,6 +2,9 @@
 " MacVim用の設定
 "==============================================================================
 if has("gui_macvim")
+	set t_Co=256
+	colorscheme wombat256mod
+
 	" 透明度の設定
 	set transparency=10
 

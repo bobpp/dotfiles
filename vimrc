@@ -19,8 +19,7 @@ filetype plugin indent on
 "==============================================================================
 " color scheme
 "==============================================================================
-set t_Co=256
-colorscheme wombat256mod
+colorscheme wombat
 
 "==============================================================================
 " 検索とか
@@ -74,11 +73,6 @@ augroup myfiletypes
 augroup END
 
 map <F5> :setlocal spell! spelllang=en_us<cr>
-
-" Reads the skeleton php file
-" Note: The normal command afterwards deletes an ugly pending line and moves
-" the cursor to the middle of the file.
-autocmd BufNewFile *.php 0r ~/.vim/skeleton.php | normal GddOAOA
 
 "==============================================================================
 " Xslate.vim
