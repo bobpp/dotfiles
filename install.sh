@@ -15,3 +15,6 @@ git config --global user.name bobpp
 git config --global user.email bobpp.asroma+github@gmail.com
 git config --global color.ui auto
 git config --global core.excludesfile ~/.gitignore
+git config --global github.user bobpp
+echo "please execute 'git config --global github.token <MY GITHUB TOKEN>'"
+
