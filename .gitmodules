@@ -40,3 +40,6 @@
 [submodule "vim/bundle/vim-wombat"]
 	path = vim/bundle/vim-wombat
 	url = git://github.com/cschlueter/vim-wombat.git
+[submodule "vim/bundle/vimproc"]
+	path = vim/bundle/vimproc
+	url = git://github.com/Shougo/vimproc.git
