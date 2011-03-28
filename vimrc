@@ -111,6 +111,13 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 let g:neocomplcache_enable_at_startup = 1
 
 "==============================================================================
+" yanktmp.vim
+"==============================================================================
+map <silent> sy :call YanktmpYank()<CR>
+map <silent> sp :call YanktmpPaste_p()<CR>
+map <silent> sP :call YanktmpPaste_P()<CR>
+
+"==============================================================================
 " 日本語文字コードの自動判別
 "==============================================================================
 if &encoding !=# 'utf-8'
