@@ -106,6 +106,11 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 "==============================================================================
+" unite-outline.vim
+"==============================================================================
+nmap <C-o> :Unite outline<CR>
+
+"==============================================================================
 " neocomplecache
 "==============================================================================
 let g:neocomplcache_enable_at_startup = 1
