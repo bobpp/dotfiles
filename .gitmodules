@@ -49,3 +49,6 @@
 [submodule "vim/bundle/yanktmp.vim"]
 	path = vim/bundle/yanktmp.vim
 	url = git://github.com/vim-scripts/yanktmp.vim.git
+[submodule "vim/bundle/vim-rails"]
+	path = vim/bundle/vim-rails
+	url = git://github.com/tpope/vim-rails.git
