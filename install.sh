@@ -1,13 +1,23 @@
 #!/bin/sh
 
 THIS=`pwd`
+
+# links
 for i in screenrc vimrc zshrc gvimrc my.cnf vim ctags bashrc shrc ackrc
 do
-  ln -s $THIS/$i $HOME/.$i
+  if [ -e $HOME/.$i ] ; then
+    echo "Already exists $HOME/.$i"
+  else
+    ln -s $THIS/$i $HOME/.$i
+  fi
 done
 
 # vim swap dir make
-mkdir $HOME/.vim/swap
+if [ -e $HOME/.vim/swap ] ; then
+  echo "Already exists $HOME/.vim/swap"
+else
+  mkdir $HOME/.vim/swap
+fi
 
 # git config
 echo "doc/tags\ndoc/tags-ja" >> ~/.gitignore
