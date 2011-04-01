@@ -100,7 +100,7 @@ let g:rails_default_database="sqlite3"
 "==============================================================================
 let g:unite_enable_start_insert = 1
 nmap bg :Unite -buffer-name=files buffer file<CR>
-nmap <C-m> :Unite file_mru<CR>
+nmap <C-l> :Unite file_mru<CR>
 
 " Unite バッファで <Esc>x2 で終了
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
