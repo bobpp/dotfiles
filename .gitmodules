@@ -52,3 +52,6 @@
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
+[submodule "vim/bundle/pig.vim"]
+	path = vim/bundle/pig.vim
+	url = git://github.com/vim-scripts/pig.vim.git
