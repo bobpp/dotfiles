@@ -3,10 +3,10 @@
 "==============================================================================
 if has("gui_macvim")
 	set t_Co=256
-	colorscheme wombat256mod
+	colorscheme solarized
 
 	" 透明度の設定
-	set transparency=10
+	set transparency=5
 
 	" Dockがはねる問題を修正
 	set imdisable
