@@ -99,6 +99,7 @@ let g:rails_default_database="sqlite3"
 " unite.vim
 "==============================================================================
 let g:unite_enable_start_insert = 1
+let g:unite_source_file_mru_time_format = ""
 nmap <C-l> :Unite buffer file_mru<CR>
 
 " Unite バッファで <Esc>x2 で終了
