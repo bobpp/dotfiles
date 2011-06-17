@@ -19,9 +19,6 @@
 [submodule "vim/bundle/vim-ref"]
 	path = vim/bundle/vim-ref
 	url = git://github.com/thinca/vim-ref.git
-[submodule "vim/bundle/perlomni.vim"]
-	path = vim/bundle/perlomni.vim
-	url = git://github.com/c9s/perlomni.vim.git
 [submodule "vim/bundle/zencoding-vim"]
 	path = vim/bundle/zencoding-vim
 	url = git://github.com/mattn/zencoding-vim.git
