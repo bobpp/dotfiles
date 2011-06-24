@@ -18,20 +18,22 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'Align'
-Bundle 'neocomplcache'
-Bundle 'ack.vim'
-Bundle 'fakeclip'
-Bundle 'Gist.vim'
 Bundle 'pig.vim'
-Bundle 'unite.vim'
-Bundle 'Solarized'
-Bundle 'rails.vim'
-Bundle 'ref.vim'
-Bundle 'Wombat'
-Bundle 'ZenCoding.vim'
-Bundle 'git://github.com/h1mesuke/unite-outline.git'
-Bundle 'git://github.com/motemen/xslate-vim.git'
+
+Bundle 'pix/Align'
+Bundle 'Shougo/neocomplcache'
+Bundle 'mileszs/ack.vim'
+Bundle 'kana/fakeclip'
+Bundle 'mattn/gist-vim'
+Bundle 'Shougo/unite.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/rails.vim'
+Bundle 'thinca/vim-ref'
+Bundle 'mattn/zencoding-vim'
+Bundle 'h1mesuke/unite-outline'
+Bundle 'motemen/xslate-vim'
+Bundle 'cschlueter/vim-wombat'
+" Bundle 'perlomni.vim'
 
 "==============================================================================
 filetype plugin indent on 
@@ -40,7 +42,8 @@ syntax on
 "==============================================================================
 " color scheme
 "==============================================================================
-colorscheme wombat
+set background=dark
+colorscheme wombat 
 
 "==============================================================================
 " 検索とか
