@@ -20,10 +20,10 @@ Bundle 'gmarik/vundle'
 
 Bundle 'pig.vim'
 
-Bundle 'pix/Align'
+Bundle 'pix/vim-align'
 Bundle 'Shougo/neocomplcache'
 Bundle 'mileszs/ack.vim'
-Bundle 'kana/fakeclip'
+Bundle 'kana/vim-fakeclip'
 Bundle 'mattn/gist-vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'altercation/vim-colors-solarized'
