@@ -18,6 +18,21 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'Align'
+Bundle 'neocomplcache'
+Bundle 'ack.vim'
+Bundle 'fakeclip'
+Bundle 'Gist.vim'
+Bundle 'pig.vim'
+Bundle 'unite.vim'
+Bundle 'Solarized'
+Bundle 'rails.vim'
+Bundle 'ref.vim'
+Bundle 'Wombat'
+Bundle 'ZenCoding.vim'
+Bundle 'git://github.com/h1mesuke/unite-outline.git'
+Bundle 'git://github.com/motemen/xslate-vim.git'
+
 "==============================================================================
 filetype plugin indent on 
 syntax on
