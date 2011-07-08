@@ -2,19 +2,14 @@
 " 基本的な設定
 "==============================================================================
 set nocompatible
-set backspace=2
 
 "==============================================================================
-" load via Vundle
+" load plugins via Vundle
 "==============================================================================
 filetype off
 
 set rtp+=~/.vim/vundle/
 call vundle#rc()
-
-"==============================================================================
-" plugin settings
-"==============================================================================
 
 Bundle 'gmarik/vundle'
 
@@ -33,9 +28,14 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'h1mesuke/unite-outline'
 Bundle 'motemen/xslate-vim'
 Bundle 'cschlueter/vim-wombat'
+Bundle 'Shougo/vimproc'
+" Bundle 'Shougo/vimshell'
 " Bundle 'perlomni.vim'
 
 "==============================================================================
+" Basic Setting
+"==============================================================================
+set backspace=2
 filetype plugin indent on 
 syntax on
 
