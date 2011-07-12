@@ -29,6 +29,7 @@ Bundle 'h1mesuke/unite-outline'
 Bundle 'motemen/xslate-vim'
 Bundle 'cschlueter/vim-wombat'
 Bundle 'Shougo/vimproc'
+Bundle 'tpope/vim-fugitive'
 " Bundle 'Shougo/vimshell'
 " Bundle 'perlomni.vim'
 
@@ -82,7 +83,7 @@ set directory=~/.vim/swap
 "  GetEFstatus() は下に記述
 "==============================================================================
 set laststatus=2
-set statusline=[#%n:%t%m]\ %y\%{GetEFstatus()}%=%l-%c\ %p%%\ \ \ 
+set statusline=[#%n:%t%m]\ %y\%{GetEFstatus()}\ %{fugitive#statusline()}%=%l-%c\ %p%%\ \ \ 
 
 " Load matchit (% to bounce from do to end, etc.)
 runtime! macros/matchit.vim
