@@ -100,11 +100,6 @@ augroup END
 map <F5> :setlocal spell! spelllang=en_us<cr>
 
 "==============================================================================
-" Xslate.vim
-"==============================================================================
-autocmd BufNewFile,BufRead *.xt setfiletype xslate
-
-"==============================================================================
 " rubycomplete.vim
 "==============================================================================
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
