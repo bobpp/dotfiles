@@ -30,6 +30,9 @@ Bundle 'motemen/xslate-vim'
 Bundle 'cschlueter/vim-wombat'
 Bundle 'Shougo/vimproc'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tyru/current-func-info.vim'
+Bundle 'Shougo/vimfiler'
+Bundle 'thinca/vim-quickrun'
 " Bundle 'Shougo/vimshell'
 " Bundle 'perlomni.vim'
 
@@ -74,16 +77,11 @@ if exists('&ambiwidth')
 endif
 
 "==============================================================================
-" SwapFile の場所を設定
-"==============================================================================
-set directory=~/.vim/swap
-
-"==============================================================================
 " ステータスライン
 "  GetEFstatus() は下に記述
 "==============================================================================
 set laststatus=2
-set statusline=[#%n:%t%m]\ %y\%{GetEFstatus()}\ %{fugitive#statusline()}%=%l-%c\ %p%%\ \ \ 
+let &statusline='[#%n:%t%m] %y%{GetEFstatus()} %{fugitive#statusline()}%=%{cfi#get_func_name()} @ %l-%c %p%%   '
 
 " Load matchit (% to bounce from do to end, etc.)
 runtime! macros/matchit.vim
