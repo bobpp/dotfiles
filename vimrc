@@ -33,6 +33,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tyru/current-func-info.vim'
 Bundle 'Shougo/vimfiler'
 Bundle 'thinca/vim-quickrun'
+Bundle 'ssh://bobpp@a-chan.bobpp.jp/home/bobpp/git/TT2-syntax.vim.git'
 " Bundle 'Shougo/vimshell'
 " Bundle 'perlomni.vim'
 
@@ -118,6 +119,7 @@ let g:rails_default_database="sqlite3"
 "==============================================================================
 let g:unite_enable_start_insert = 1
 let g:unite_source_file_mru_time_format = ""
+let g:unite_source_file_mru_limit = 500
 nmap <C-l> :Unite buffer file_mru<CR>
 
 " Unite バッファで <Esc>x2 で終了
