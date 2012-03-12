@@ -136,6 +136,7 @@ nmap <C-o> :Unite outline<CR>
 "==============================================================================
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_plugin_rank = {}
 
 "==============================================================================
 " yanktmp.vim
