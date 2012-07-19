@@ -1,0 +1,8 @@
+# Alias
+alias ll='ls -l'
+alias la='ls -la'
+alias vi=vim
+alias screen='screen -U'
+alias today="date '+%Y%m%d'"
+alias view='vim -R'
+

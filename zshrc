@@ -150,6 +150,7 @@ function git_info() {
 }
 
 # load user .zshrc configuration file
+[ -f $HOME/.alias ] && source $HOME/.alias
 [ -f $ZDOTDIR/.zshrc.mine ] && source $ZDOTDIR/.zshrc.mine
 [ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
 
