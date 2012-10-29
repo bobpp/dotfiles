@@ -36,6 +36,7 @@ autoload -U colors; colors
 setopt auto_cd # Auto Current Directory
 setopt auto_list
 setopt auto_menu
+setopt auto_pushd
 setopt magic_equal_subst
 
 # Share History
