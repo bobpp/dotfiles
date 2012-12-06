@@ -30,7 +30,6 @@ Bundle 'motemen/xslate-vim'
 Bundle 'cschlueter/vim-wombat'
 Bundle 'Shougo/vimproc'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tyru/current-func-info.vim'
 Bundle 'Shougo/vimfiler'
 Bundle 'thinca/vim-quickrun'
 Bundle 'ssh://bobpp@a-chan.bobpp.jp/home/bobpp/git/TT2-syntax.vim.git'
@@ -83,7 +82,7 @@ endif
 "  GetEFstatus() は下に記述
 "==============================================================================
 set laststatus=2
-let &statusline='[#%n:%t%m] %y%{GetEFstatus()} %{fugitive#statusline()}%=%{cfi#get_func_name()} @ %l-%c %p%%   '
+let &statusline='[#%n:%t%m] %y%{GetEFstatus()} %{fugitive#statusline()}%=%l-%c %p%%   '
 
 " Load matchit (% to bounce from do to end, etc.)
 runtime! macros/matchit.vim
