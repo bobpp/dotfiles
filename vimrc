@@ -35,6 +35,8 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'ssh://bobpp@a-chan.bobpp.jp/home/bobpp/git/TT2-syntax.vim.git'
 Bundle 'sudo.vim'
 Bundle 'banyan/recognize_charcode.vim'
+Bundle 'javascript.vim'
+Bundle 'pangloss/vim-javascript'
 " Bundle 'Shougo/vimshell'
 " Bundle 'perlomni.vim'
 
