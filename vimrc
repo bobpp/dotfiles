@@ -4,41 +4,39 @@
 set nocompatible
 
 "==============================================================================
-" load plugins via Vundle
+" load plugins via NeoBundle
 "==============================================================================
 filetype off
 
-set rtp+=~/.vim/vundle/
-call vundle#rc()
+if has('vim_starting')
+	set rtp+=~/.vim/neobundle/
+endif
+call neobundle#rc(expand('~/.vim/bundle'))
 
-Bundle 'gmarik/vundle'
-
-Bundle 'pig.vim'
-
-Bundle 'pix/vim-align'
-Bundle 'Shougo/neocomplcache'
-Bundle 'mileszs/ack.vim'
-Bundle 'kana/vim-fakeclip'
-Bundle 'mattn/gist-vim'
-Bundle 'Shougo/unite.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-rails'
-Bundle 'thinca/vim-ref'
-Bundle 'mattn/zencoding-vim'
-Bundle 'h1mesuke/unite-outline'
-Bundle 'motemen/xslate-vim'
-Bundle 'cschlueter/vim-wombat'
-Bundle 'Shougo/vimproc'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Shougo/vimfiler'
-Bundle 'thinca/vim-quickrun'
-Bundle 'ssh://bobpp@a-chan.bobpp.jp/home/bobpp/git/TT2-syntax.vim.git'
-Bundle 'sudo.vim'
-Bundle 'banyan/recognize_charcode.vim'
-Bundle 'javascript.vim'
-Bundle 'pangloss/vim-javascript'
-" Bundle 'Shougo/vimshell'
-" Bundle 'perlomni.vim'
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'pig.vim'
+NeoBundle 'pix/vim-align'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'kana/vim-fakeclip'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'motemen/xslate-vim'
+NeoBundle 'cschlueter/vim-wombat'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'ssh://bobpp@a-chan.bobpp.jp/home/bobpp/git/TT2-syntax.vim.git'
+NeoBundle 'sudo.vim'
+NeoBundle 'banyan/recognize_charcode.vim'
+NeoBundle 'javascript.vim'
+NeoBundle 'pangloss/vim-javascript'
 
 "==============================================================================
 " Basic Setting
