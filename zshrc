@@ -1,8 +1,3 @@
-# Custom plugin, theme dir
-if [[ -e "$HOME/.oh-my-zsh-custom" ]]; then
-	ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
-fi
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -11,6 +6,11 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="bobpp"
+
+# Custom plugin, theme dir
+if [[ -e "$HOME/.oh-my-zsh-custom" ]]; then
+	ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
+fi
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
