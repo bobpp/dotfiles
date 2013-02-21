@@ -41,5 +41,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/Users/matsuda.tadashi/.pythonbrew/bin:/Users/matsuda.tadashi/.pythonbrew/pythons/Python-2.7.3/bin:/Users/matsuda.tadashi/.rbenv/shims:/Users/matsuda.tadashi/.rbenv/bin:/Users/matsuda.tadashi/perl5/perlbrew/bin:/Users/matsuda.tadashi/perl5/perlbrew/perls/perl-5.16.0/bin:/usr/local/bin:/Users/matsuda.tadashi/.vim/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/matsuda.tadashi/.rbenv/shims:/Users/matsuda.tadashi/.rbenv/bin:/Users/matsuda.tadashi/.vim/bin:/Users/matsuda.tadashi/bin:/Users/matsuda.tadashi/local/bin:/Users/matsuda.tadashi/bin:/Users/matsuda.tadashi/local/bin
+# Load host-specify configure
+if [[ -e "$HOME/.zshrc.mine" ]]; then
+	source "$HOME/.zshrc.mine"
+fi
+
