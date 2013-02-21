@@ -37,6 +37,8 @@ NeoBundle 'sudo.vim'
 NeoBundle 'banyan/recognize_charcode.vim'
 NeoBundle 'javascript.vim'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle "y-uuki/unite-perl-module.vim"
+NeoBundle 'tpope/vim-markdown'
 
 "==============================================================================
 " Basic Setting
@@ -49,7 +51,7 @@ syntax on
 " color scheme
 "==============================================================================
 set background=dark
-colorscheme wombat 
+colorscheme solarized
 
 "==============================================================================
 " 検索とか
