@@ -1,157 +1,45 @@
-# .zshrc
-
-# load base setting rc
-[ -f $ZDOTDIR/.shrc ] && source $ZDOTDIR/.shrc
-[ -f $HOME/.shrc ] && source $HOME/.shrc
-
-# bindkey for Emacs mode
-bindkey -e
-
-# dabbrev
-HARDCOPYFILE=$HOME/.screen-hardcopy
-touch $HARDCOPYFILE
-dabbrev-complete () {
-        local reply lines=80
-        screen -X eval "hardcopy -h $HARDCOPYFILE"
-        reply=($(sed '/^$/d' $HARDCOPYFILE | sed '$ d' | tail -$lines))
-        compadd - "${reply[@]%[*/=@|]}"
-}
-
-zle -C dabbrev-complete menu-complete dabbrev-complete
-bindkey '^o' dabbrev-complete
-bindkey '^o^_' reverse-menu-complete
-
-# .zshrc is sourced in interactive shells.
-# It should contain commands to set up aliases,
-# functions, options, key bindings, etc.
-autoload -U compinit; compinit
-
-#allow tab completion in the middle of a word
-setopt COMPLETE_IN_WORD
-
-autoload zed
-
-autoload -U colors; colors
-
-setopt auto_cd # Auto Current Directory
-setopt auto_list
-setopt auto_menu
-setopt auto_pushd
-setopt magic_equal_subst
-
-# Share History
-HISTFILE=$HOME/.zsh-history
-HISTSIZE=100000
-SAVEHIST=100000
-setopt hist_ignore_dups     # ignore duplication command history list
-setopt share_history
-
-unsetopt promptcr
-
-# Aliases
-setopt complete_aliases     # aliased ls needs if file/dir completions work
-
-case "${OSTYPE}" in
-freebsd*|darwin*)
-    alias ls="ls -G -w"
-    ;;
-linux*)
-    alias ls="ls --color"
-    ;;
-esac
-
-alias -g G='| grep'
-alias -g L='| less'
-alias -g 2U='| nkf -wu' # nkfによる文字コード変換 tailなどにどうぞ
-alias -g FSVN='| cut -b8-' # svn stの結果から変更ありファイルリストのみ抜き出す
-
-# Prompt
-setopt prompt_subst
-
-# Setting Color
-local ORANGE=$'%{[33m%}'
-local GREEN=$'%{[32m%}'
-local BLUE=$'%{[34m%}'
-local DEFAULT=$'%{[m%}'
-PROMPT=$ORANGE'(%n@%m) '$GREEN'[%~]'$BLUE' $(git_info)'$DEFAULT$'\n%(!.#.$) '
-# End of Prompt
-
-# Show Latest Command for GNU Screen
-# by http://nijino.homelinux.net/diary/200206.shtml#200206141
-if [ "$TERM" = "screen" ]; then
-	chpwd () { echo -n "_`dirs`\\" }
-	preexec() {
-		# see [zsh-workers:13180]
-		# http://www.zsh.org/mla/workers/2000/msg03993.html
-		emulate -L zsh
-		local -a cmd; cmd=(${(z)2})
-		case $cmd[1] in
-			fg)
-				if (( $#cmd == 1 )); then
-					cmd=(builtin jobs -l %+)
-				else
-					cmd=(builtin jobs -l $cmd[2])
-				fi
-				;;
-			%*) 
-				cmd=(builtin jobs -l $cmd[1])
-				;;
-			sudo)
-				if (( $#cmd >= 2)); then
-					cmd[1]="s*$cmd[2]"
-				fi
-				;&	
-			cd)
-				if (( $#cmd == 2)); then
-					cmd[1]=$cmd[2]
-				fi
-				;&
-			*)
-				echo -n "k$cmd[1]:t\\"
-				return
-				;;
-		esac
-
-		local -A jt; jt=(${(kv)jobtexts})
-
-		$cmd >>(read num rest
-			cmd=(${(z)${(e):-\$jt$num}})
-			echo -n "k$cmd[1]af:t\\") 2>/dev/null
-	}
-	chpwd
+# Custom plugin, theme dir
+if [[ -e "$HOME/.oh-my-zsh-custom" ]]; then
+	ZSH_CUSTOM="$HOME/.oh-my-zsh-custom"
 fi
 
-# Background jobs executed notifier.
-function jobs_mail () {
-	local mail=$1
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-	while :
-	do
-		builtin jobs | grep -q .
-		if [[ $? != 0 ]]; then
-			break
-		fi
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="bobpp"
 
-		sleep 5
-	done
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-	echo "bg jobs finished!" | mail -s'Jobs finished' $mail
-}
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
+# Comment this out to disable bi-weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-function git_info() { 
-	local info 
+# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
+# export UPDATE_ZSH_DAYS=13
 
-	if test -z $(git rev-parse --git-dir 2> /dev/null); then 
-		info='' 
-	else 
-		info="(git:${$(git symbolic-ref HEAD 2> /dev/null)#refs/heads/})" 
-	fi
-	echo -n "$info"
-}
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
-# load user .zshrc configuration file
-[ -f $HOME/.alias ] && source $HOME/.alias
-[ -f $ZDOTDIR/.zshrc.mine ] && source $ZDOTDIR/.zshrc.mine
-[ -f $HOME/.zshrc.mine ] && source $HOME/.zshrc.mine
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# Customize to your needs...
+export PATH=/Users/matsuda.tadashi/.pythonbrew/bin:/Users/matsuda.tadashi/.pythonbrew/pythons/Python-2.7.3/bin:/Users/matsuda.tadashi/.rbenv/shims:/Users/matsuda.tadashi/.rbenv/bin:/Users/matsuda.tadashi/perl5/perlbrew/bin:/Users/matsuda.tadashi/perl5/perlbrew/perls/perl-5.16.0/bin:/usr/local/bin:/Users/matsuda.tadashi/.vim/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/matsuda.tadashi/.rbenv/shims:/Users/matsuda.tadashi/.rbenv/bin:/Users/matsuda.tadashi/.vim/bin:/Users/matsuda.tadashi/bin:/Users/matsuda.tadashi/local/bin:/Users/matsuda.tadashi/bin:/Users/matsuda.tadashi/local/bin
