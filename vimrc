@@ -94,7 +94,7 @@ augroup myfiletypes
 	" Clear old autocmds in group
 	autocmd!
 	" autoindent with two spaces, always expand tabs
-	autocmd FileType ruby,eruby,yaml set ai ts=2 sts=0
+	autocmd FileType ruby,eruby,yaml set ai ts=2 sts=2 shiftwidth=2 expandtab
 	autocmd FileType ruby,eruby,yaml highlight tabs ctermbg=7
 	autocmd FileType ruby,eruby,yaml match tabs /	/
 augroup END
