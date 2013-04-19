@@ -40,6 +40,7 @@ NeoBundle 'javascript.vim'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle "y-uuki/unite-perl-module.vim"
 NeoBundle 'tpope/vim-markdown'
+NeoBundle 'moznion/vim-cpanfile'
 
 "==============================================================================
 " Basic Setting

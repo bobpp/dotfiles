@@ -9,3 +9,7 @@ autocmd BufNewFile,BufRead *.psgi setfiletype perl
 
 " .phps = php
 autocmd BufNewFile,BufRead *.phps setfiletype php
+
+" cpanfile
+autocmd BufNewFile,BufRead cpanfile set filetype=cpanfile
+autocmd BufNewFile,BufRead cpanfile set syntax=perl.cpanfile
