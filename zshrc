@@ -41,6 +41,9 @@ plugins=(git git-flow vagrant perl capistrano brew zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+# load zaw.zsh
+source $HOME/.zaw/zaw.zsh
+
 # Load host-specify configure
 if [[ -e "$HOME/.zshrc.mine" ]]; then
 	source "$HOME/.zshrc.mine"

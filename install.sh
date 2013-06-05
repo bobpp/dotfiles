@@ -3,7 +3,7 @@
 THIS=`pwd`
 
 # links
-for i in screenrc vimrc zshrc gvimrc my.cnf vim ctags bashrc shrc ackrc module-starter alias oh-my-zsh oh-my-zsh-custom
+for i in screenrc vimrc zshrc gvimrc my.cnf vim ctags bashrc shrc ackrc module-starter alias oh-my-zsh oh-my-zsh-custom zaw
 do
   if [ -e $HOME/.$i ] ; then
     echo "Already exists $HOME/.$i"
