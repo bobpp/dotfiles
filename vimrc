@@ -48,6 +48,7 @@ NeoBundle 'moznion/vim-cpanfile'
 set backspace=2
 filetype plugin indent on 
 syntax on
+set nobackup
 
 "==============================================================================
 " color scheme
