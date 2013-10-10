@@ -36,11 +36,12 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'ssh://bobpp@a-chan.bobpp.jp/home/bobpp/git/TT2-syntax.vim.git'
 NeoBundle 'sudo.vim'
 NeoBundle 'banyan/recognize_charcode.vim'
-NeoBundle 'javascript.vim'
 NeoBundle 'pangloss/vim-javascript'
-NeoBundle "y-uuki/unite-perl-module.vim"
+NeoBundle 'y-uuki/unite-perl-module.vim'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'moznion/vim-cpanfile'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'vim-ruby/vim-ruby'
 
 "==============================================================================
 " Basic Setting
@@ -49,6 +50,8 @@ set backspace=2
 filetype plugin indent on 
 syntax on
 set nobackup
+nnoremap : ;
+nnoremap ; :
 
 "==============================================================================
 " color scheme
@@ -125,7 +128,7 @@ let g:rails_default_database="sqlite3"
 let g:unite_enable_start_insert = 1
 let g:unite_source_file_mru_time_format = ""
 let g:unite_source_file_mru_limit = 500
-nmap <C-l> :Unite buffer file_mru<CR>
+nnoremap <C-l> :Unite buffer file_mru<CR>
 
 " Unite バッファで <Esc>x2 で終了
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
@@ -134,7 +137,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 "==============================================================================
 " unite-outline.vim
 "==============================================================================
-nmap <C-o> :Unite outline<CR>
+nnoremap <C-o> :Unite outline<CR>
 
 "==============================================================================
 " neocomplecache
