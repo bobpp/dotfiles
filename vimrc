@@ -42,6 +42,7 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'moznion/vim-cpanfile'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'itchyny/lightline.vim'
 
 "==============================================================================
 " Basic Setting
@@ -56,6 +57,7 @@ nnoremap ; :
 "==============================================================================
 " color scheme
 "==============================================================================
+set t_Co=256
 set background=dark
 colorscheme solarized
 
@@ -90,7 +92,6 @@ endif
 "  GetEFstatus() は下に記述
 "==============================================================================
 set laststatus=2
-let &statusline='[#%n:%t%m] %y%{GetEFstatus()} %{fugitive#statusline()}%=%l-%c %p%%   '
 
 " Load matchit (% to bounce from do to end, etc.)
 runtime! macros/matchit.vim
@@ -152,37 +153,6 @@ let g:neocomplcache_plugin_rank = {}
 map <silent> sy :call YanktmpYank()<CR>
 map <silent> sp :call YanktmpPaste_p()<CR>
 map <silent> sP :call YanktmpPaste_P()<CR>
-
-"==============================================================================
-" ステータスライン表示用
-"==============================================================================
-function! GetEFstatus()
-  let str = ''
-  let fenc = ''
-  if &fileformat == 'unix'
-    let str = '[UNI]'
-  else
-    let str = '[' . &fileformat . ']'
-  endif
-  if &fileencoding != ''
-    if &fileencoding =~# 'iso-2022-jp'
-      let fenc = 'J'
-    elseif &fileencoding == 'utf-8'
-      let fenc = 'U'
-    elseif &fileencoding == 'cp932'
-      let fenc = 'S'
-    elseif &fileencoding =~# 'euc-jp'
-      let fenc = 'E'
-    else
-      let fenc = &fileencoding
-    endif
-    let str = str . '[' . fenc . ']'
-  else
-    let str = str . '[-]'
-  endif
-  unlet fenc
-  return str
-endfunction
 
 "==============================================================================
 " Load .mine ファイル
