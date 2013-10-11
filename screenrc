@@ -18,3 +18,6 @@ defscrollback 4096
 bind ^U encoding utf8
 bind ^E encoding euc
 bind ^J encoding sjis
+
+term xterm-256color
+termcapinfo xterm-256color 'is=^[r^[mJ^[H^[?7h^[?1;4;6l'
