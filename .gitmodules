@@ -10,3 +10,6 @@
 [submodule "zaw"]
 	path = zaw
 	url = https://github.com/zsh-users/zaw.git
+[submodule "zsh/perl-completions"]
+	path = zsh/perl-completions
+	url = https://github.com/syohex/zsh-perl-completions.git
