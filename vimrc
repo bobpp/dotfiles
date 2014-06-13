@@ -14,9 +14,17 @@ endif
 call neobundle#rc(expand('~/.vim/bundle'))
 
 NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/vimproc', {
+	\ 'build' : {
+		\ 'windows' : 'make -f make_mingw32.mak',
+		\ 'cygwin' : 'make -f make_cygwin.mak',
+		\ 'mac' : 'make -f make_mac.mak',
+		\ 'unix' : 'make -f make_unix.mak',
+	\ },
+\ }
 NeoBundle 'pig.vim'
 NeoBundle 'pix/vim-align'
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplete'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'mattn/gist-vim'
@@ -29,7 +37,6 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'motemen/xslate-vim'
 NeoBundle 'cschlueter/vim-wombat'
-NeoBundle 'Shougo/vimproc'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'thinca/vim-quickrun'
@@ -43,6 +50,9 @@ NeoBundle 'moznion/vim-cpanfile'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'aklt/plantuml-syntax'
 
 "==============================================================================
 " Basic Setting
@@ -144,11 +154,11 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 nnoremap <C-o> :Unite outline<CR>
 
 "==============================================================================
-" neocomplecache
+" neocomplete
 "==============================================================================
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_plugin_rank = {}
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+
 
 "==============================================================================
 " yanktmp.vim
