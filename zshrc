@@ -42,10 +42,21 @@ plugins=(git git-flow vagrant perl capistrano brew zsh-syntax-highlighting bundl
 # load Addtional Plugins
 fpath=($HOME/.zsh/perl-completions $fpath)
 
+#disable autocorrect
+unsetopt correct_all
+
 source $ZSH/oh-my-zsh.sh
 
 # load zaw.zsh
 source $HOME/.zaw/zaw.zsh
+
+function ssh_screen(){
+  eval server=?${$#}
+  screen -t $server ssh "$@"
+}
+if [ x$TERM = xscreen ]; then
+  alias ssh=ssh_screen
+fi
 
 # Load host-specify configure
 if [[ -e "$HOME/.zshrc.mine" ]]; then
