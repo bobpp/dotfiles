@@ -34,7 +34,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'Shougo/unite-outline'
 NeoBundle 'motemen/xslate-vim'
 NeoBundle 'cschlueter/vim-wombat'
 NeoBundle 'tpope/vim-fugitive'
@@ -53,6 +53,8 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'aklt/plantuml-syntax'
+NeoBundle 'Rip-Rip/clang_complete'
+NeoBundle 'tokorom/clang_complete-getopts-ios'
 
 "==============================================================================
 " Basic Setting
