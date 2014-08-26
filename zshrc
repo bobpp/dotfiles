@@ -58,9 +58,6 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
-# load zaw.zsh
-source $HOME/.zaw/zaw.zsh
-
 function ssh_screen(){
   eval server=?${$#}
   screen -t $server ssh "$@"
