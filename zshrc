@@ -45,6 +45,17 @@ fpath=($HOME/.zsh/perl-completions $fpath)
 #disable autocorrect
 unsetopt correct_all
 
+#----- cdr
+autoload -Uz is-at-least
+if is-at-least 4.3.11
+then
+  autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+  add-zsh-hook chpwd chpwd_recent_dirs
+  zstyle ':chpwd:*' recent-dirs-max 5000
+  zstyle ':chpwd:*' recent-dirs-default yes
+  zstyle ':completion:*' recent-dirs-insert both
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # load zaw.zsh
@@ -56,6 +67,13 @@ function ssh_screen(){
 }
 if [ x$TERM = xscreen ]; then
   alias ssh=ssh_screen
+fi
+
+# load peco functions
+if [[ -n $(which peco 2>/dev/null) ]]; then
+  for f (~/.zsh/peco-sources/*) source "${f}"
+  bindkey '^r' peco-select-history
+  bindkey '^o' peco-cdr
 fi
 
 # Load host-specify configure
