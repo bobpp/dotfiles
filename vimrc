@@ -116,8 +116,6 @@ augroup myfiletypes
 	autocmd!
 	" autoindent with two spaces, always expand tabs
 	autocmd FileType ruby,eruby,yaml set ai ts=2 sts=2 shiftwidth=2 expandtab
-	autocmd FileType ruby,eruby,yaml highlight tabs ctermbg=7
-	autocmd FileType ruby,eruby,yaml match tabs /	/
 augroup END
 
 map <F5> :setlocal spell! spelllang=en_us<cr>
@@ -161,6 +159,10 @@ nnoremap <C-o> :Unite outline<CR>
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 
+"==============================================================================
+" align
+"==============================================================================
+let g:Align_xstrlen=3
 
 "==============================================================================
 " yanktmp.vim
