@@ -152,6 +152,17 @@ nnoremap <C-l> :Unite buffer file_mru<CR>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+" search via grep
+nnoremap <C-k>           :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> ,<C-k> :<C-u>UniteResume search-buffer<CR>
+
+" search by pt
+if executable('pt')
+  let g:unite_source_grep_command = 'pt'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
 "==============================================================================
 " unite-outline.vim
 "==============================================================================
