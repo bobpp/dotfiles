@@ -65,6 +65,8 @@ syntax on
 set nobackup
 nnoremap : ;
 nnoremap ; :
+set nowildmenu
+set wildmode=longest,list:longest
 
 "==============================================================================
 " color scheme
