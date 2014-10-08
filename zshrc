@@ -45,6 +45,8 @@ fpath=($HOME/.zsh/perl-completions $fpath)
 #disable autocorrect
 unsetopt correct_all
 
+setopt HIST_IGNORE_ALL_DUPS
+
 #----- cdr
 autoload -Uz is-at-least
 if is-at-least 4.3.11
