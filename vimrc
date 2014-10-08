@@ -55,6 +55,8 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'aklt/plantuml-syntax'
 NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'tokorom/clang_complete-getopts-ios'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 
 "==============================================================================
 " Basic Setting
@@ -160,6 +162,13 @@ nnoremap <C-o> :Unite outline<CR>
 "==============================================================================
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
+
+"==============================================================================
+" neosnippet
+"==============================================================================
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+let g:neosnippet#snippets_directory="~/.vim/snippets"
 
 "==============================================================================
 " align
