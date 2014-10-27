@@ -57,6 +57,7 @@ NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'tokorom/clang_complete-getopts-ios'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'kchmck/vim-coffee-script'
 
 "==============================================================================
 " Basic Setting
@@ -121,6 +122,9 @@ augroup myfiletypes
 	" autoindent with two spaces, always expand tabs
 	autocmd FileType ruby,eruby,yaml set ai ts=2 sts=2 shiftwidth=2 expandtab
 augroup END
+
+au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
 
 map <F5> :setlocal spell! spelllang=en_us<cr>
 
