@@ -163,7 +163,7 @@ nnoremap <silent> ,<C-k> :<C-u>UniteResume search-buffer<CR>
 " search by pt
 if executable('pt')
   let g:unite_source_grep_command = 'pt'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --follow'
   let g:unite_source_grep_recursive_opt = ''
 endif
 
