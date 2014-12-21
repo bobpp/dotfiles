@@ -73,6 +73,7 @@ if [[ -n $(which peco 2>/dev/null) ]]; then
   for f (~/.zsh/peco-sources/*) source "${f}"
   bindkey '^r' peco-select-history
   bindkey '^o' peco-cdr
+  bindkey '^g' peco-git-branch-checkout
 fi
 
 # Load host-specify configure
