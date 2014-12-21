@@ -146,11 +146,14 @@ let g:rails_default_database="sqlite3"
 
 "==============================================================================
 " unite.vim
+"	unite-outline.vim
 "==============================================================================
 let g:unite_enable_start_insert = 1
 let g:unite_source_file_mru_time_format = ""
 let g:unite_source_file_mru_limit = 500
 nnoremap <C-l> :Unite buffer file_mru<CR>
+nnoremap <C-i> :Unite buffer file_rec/git<CR>
+nnoremap <C-o> :Unite outline<CR>
 
 " Unite バッファで <Esc>x2 で終了
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
@@ -166,11 +169,6 @@ if executable('pt')
   let g:unite_source_grep_default_opts = '--nogroup --nocolor --follow'
   let g:unite_source_grep_recursive_opt = ''
 endif
-
-"==============================================================================
-" unite-outline.vim
-"==============================================================================
-nnoremap <C-o> :Unite outline<CR>
 
 "==============================================================================
 " neocomplete
