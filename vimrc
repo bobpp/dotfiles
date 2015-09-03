@@ -58,6 +58,7 @@ NeoBundle 'tokorom/clang_complete-getopts-ios'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
 
 "==============================================================================
 " Basic Setting
@@ -194,6 +195,11 @@ let g:Align_xstrlen=3
 map <silent> sy :call YanktmpYank()<CR>
 map <silent> sp :call YanktmpPaste_p()<CR>
 map <silent> sP :call YanktmpPaste_P()<CR>
+
+"==============================================================================
+" javascript-libraries-syntax
+"==============================================================================
+let g:used_javascript_libs = 'backbone,angularjs,angularui'
 
 "==============================================================================
 " Load .mine ファイル
