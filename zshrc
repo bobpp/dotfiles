@@ -1,5 +1,8 @@
 # alias
-source ${HOME}/.alias
+[ -f $HOME/.alias ] && source $HOME/.alias
+
+# basic shell configure
+[ -f $HOME/.shrc ] && source $HOME/.shrc
 
 # zplug install plugins
 if [[ -f $HOME/.zplug/init.zsh ]]; then
