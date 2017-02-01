@@ -4,7 +4,7 @@ THIS=`pwd`
 git submodule update --init --recursive
 
 # links
-for i in screenrc vimrc zshenv zshrc gvimrc my.cnf vim ctags bashrc shrc ackrc module-starter alias xvimrc peco zsh zplug
+for i in screenrc vimrc zshenv zshrc gvimrc my.cnf vim ctags bashrc shrc ackrc module-starter alias xvimrc peco zsh zplug gitconfig gitignore
 do
   if [ -e $HOME/.$i ] ; then
     echo "Already exists $HOME/.$i"
@@ -12,15 +12,6 @@ do
     ln -s $THIS/$i $HOME/.$i
   fi
 done
-
-# git config
-echo "doc/tags\ndoc/tags-ja" >> ~/.gitignore
-git config --global user.name bobpp
-git config --global user.email bobpp.asroma+github@gmail.com
-git config --global color.ui auto
-git config --global core.excludesfile ~/.gitignore
-git config --global github.user bobpp
-echo "please execute 'git config --global github.token <MY GITHUB TOKEN>'"
 
 # if this is Mac setting for Karabiner
 if [[ $(uname) = "Darwin" ]]; then
