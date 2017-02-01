@@ -1,3 +1,5 @@
+setopt prompt_subst
+
 # Setting Color
 local ORANGE=$'%{[33m%}'
 local GREEN=$'%{[32m%}'
@@ -15,4 +17,3 @@ function git_info() {
 	fi
 	echo -n "$info"
 }
-

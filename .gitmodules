@@ -1,12 +1,6 @@
 [submodule "vim/neobundle"]
 	path = vim/neobundle
 	url = https://github.com/Shougo/neobundle.vim
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
-[submodule "oh-my-zsh-custom/plugins/zsh-syntax-highlighting"]
-	path = oh-my-zsh-custom/plugins/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "zsh/perl-completions"]
-	path = zsh/perl-completions
-	url = https://github.com/syohex/zsh-perl-completions.git
+[submodule "zplug"]
+	path = zplug
+	url = https://github.com/zplug/zplug
