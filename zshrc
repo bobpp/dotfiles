@@ -12,6 +12,7 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "zsh-users/zsh-completions"
   zplug "syohex/zsh-perl-completions"
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
+  zplug "b4b4r07/enhancd", use:init.sh
   
   # Install plugins if there are plugins that have not been installed
   if ! zplug check --verbose; then
@@ -39,6 +40,12 @@ export SAVEHIST=1000000
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt share_history
+
+# Enhancd configure
+if zplug check "b4b4r07/enhancd"; then
+  export ENHANCD_FILTER=peco
+  export ENHANCD_DOT_SHOW_FULLPATH=1
+fi
 
 #----- cdr
 autoload -Uz is-at-least
