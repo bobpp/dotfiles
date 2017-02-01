@@ -24,6 +24,8 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug load --verbose
 fi
 
+bindkey -e
+
 # no correct
 unsetopt correct_all
 source ${HOME}/.zsh/no-correct.zsh
