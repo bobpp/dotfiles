@@ -13,16 +13,6 @@ do
   fi
 done
 
-# vim swap dir make
-for i in $HOME/.vim/swap $HOME/.vim/bundle
-do
-  if [ -e $i ] ; then
-    echo "Already exists $i"
-  else
-    mkdir $i
-  fi
-done
-
 # git config
 echo "doc/tags\ndoc/tags-ja" >> ~/.gitignore
 git config --global user.name bobpp
