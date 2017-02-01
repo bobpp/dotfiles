@@ -3,6 +3,7 @@
 
 # basic shell configure
 [ -f $HOME/.shrc ] && source $HOME/.shrc
+bindkey -e
 
 # zplug install plugins
 if [[ -f $HOME/.zplug/init.zsh ]]; then
@@ -25,8 +26,6 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug load --verbose
 fi
 
-bindkey -e
-
 # no correct
 unsetopt correct_all
 source ${HOME}/.zsh/no-correct.zsh
@@ -47,21 +46,10 @@ if zplug check "b4b4r07/enhancd"; then
   export ENHANCD_DOT_SHOW_FULLPATH=1
 fi
 
-#----- cdr
-autoload -Uz is-at-least
-if is-at-least 4.3.11; then
-  autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-  add-zsh-hook chpwd chpwd_recent_dirs
-  zstyle ':chpwd:*' recent-dirs-max 5000
-  zstyle ':chpwd:*' recent-dirs-default yes
-  zstyle ':completion:*' recent-dirs-insert both
-fi
-
 # load peco functions
 if [[ -n $(which peco 2>/dev/null) ]]; then
   for f (~/.zsh/peco-sources/*) source "${f}"
   bindkey '^r' peco-select-history
-  bindkey '^o' peco-cdr
   bindkey '^g' peco-git-branch-checkout
 fi
 
