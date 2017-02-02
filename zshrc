@@ -56,8 +56,6 @@ if [[ -n $(which peco 2>/dev/null) ]]; then
   fi
 fi
 
-
-
 # my theme
 source ${HOME}/.zsh/bobpp-theme.zsh
 
