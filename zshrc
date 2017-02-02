@@ -28,7 +28,6 @@ fi
 
 # no correct
 unsetopt correct_all
-source ${HOME}/.zsh/no-correct.zsh
 
 unsetopt promptcr
 
