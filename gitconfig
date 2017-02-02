@@ -1,11 +1,9 @@
-[include]
-	path = .gitconfig.local
 [user]
 	name = bobpp
 	email = bobpp.asroma+github@gmail.com
 [color]
 	ui = auto
-[core]
-	excludesfile = .gitignore
 [push]
 	default = simple
+[include]
+	path = .gitconfig.local

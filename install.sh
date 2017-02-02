@@ -4,7 +4,7 @@ THIS=`pwd`
 git submodule update --init --recursive
 
 # links
-for i in screenrc vimrc zshenv zshrc gvimrc my.cnf vim ctags bashrc shrc ackrc module-starter alias xvimrc peco zsh zplug gitconfig gitignore
+for i in screenrc vimrc zshenv zshrc gvimrc my.cnf vim ctags bashrc shrc ackrc module-starter alias xvimrc peco zsh zplug gitconfig gitignore config
 do
   if [ -e $HOME/.$i ] ; then
     echo "Already exists $HOME/.$i"

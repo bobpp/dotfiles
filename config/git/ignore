@@ -1,0 +1,18 @@
+m backup files
+*~
+*.swp
+*.swo
+
+# Emacs backup files
+.DS_Store
+*~
+*#
+.#*
+
+# Mac
+.DS_Store
+
+# ctags
+doc/tags
+doc/tags-ja
+
