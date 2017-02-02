@@ -27,10 +27,14 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug load --verbose
 fi
 
-# no correct
+# shell opts
 unsetopt correct_all
-
 unsetopt promptcr
+setopt no_beep
+setopt no_flow_control
+
+# completion configure
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # history
 export HISTFILE=${HOME}/.zsh_history
