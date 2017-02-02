@@ -14,6 +14,7 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "syohex/zsh-perl-completions"
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
   zplug "b4b4r07/enhancd", use:init.sh
+  zplug "plugins/bundler", from:oh-my-zsh
   
   # Install plugins if there are plugins that have not been installed
   if ! zplug check --verbose; then
