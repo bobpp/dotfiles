@@ -1,31 +1,58 @@
-#!/bin/sh
+#!/bin/bash
+# NOTE:
+# curl -L http://dot.bobpp.jp/ | bash
+# したらすてきにセットアップされる install.sh を作る
 
-THIS=`pwd`
-git submodule update --init --recursive
+readonly DOTDIR="$HOME/.dotfiles"
+readonly REPOSITORY_URL="https://github.com/bobpp/dotfiles.git"
+set -e
 
-# links
-for i in screenrc vimrc zshenv zshrc gvimrc my.cnf vim ctags bashrc shrc ackrc module-starter alias xvimrc peco zsh zplug gitconfig gitignore config
-do
-  if [ -e $HOME/.$i ] ; then
-    echo "Already exists $HOME/.$i"
-  else
-    ln -s $THIS/$i $HOME/.$i
-  fi
-done
+echo "----------------------------------------------------------"
+echo " Welcome to bobpp dotfiles!"
+echo "----------------------------------------------------------"
+echo "DOTDIR = $DOTDIR"
+echo "REPOS = $REPOSITORY_URL"
+echo ""
 
-# if this is Mac setting for Karabiner
-if [[ $(uname) = "Darwin" ]]; then
-  if [[ -e ~/Library/Preferences/org.pqrs.Karabiner.plist ]]; then
-    echo "Already exists Karabiner configure"
-	echo "when if you want overwrite after execute....."
-	echo "   $ rm ~/Library/Preferences/org.pqrs.Karabiner.plist"
-	echo "   $ cd ~/Library/Preferences"
-	echo "   $ ln -s $THIS/application-configure/Karabiner/org.pqrs.Karabiner.plist"
-  else
-    cwd=$(pwd)
-    cd ~/Library/Preferences/
-    ln -s $THIS/application-configure/Karabiner/org.pqrs.Karabiner.plist
-    cd $cwd
-  fi
+function is_command_exists () {
+  which "$1" >/dev/null 2>&1
+  return $?
+}
+
+# command checks
+# 1. git
+if ! is_command_exists "git"; then
+  echo "need git"
+  exit 1
 fi
 
+# 2. make
+if ! is_command_exists "make"; then
+  echo "need make"
+  exit 1
+fi
+
+# directory exists check
+if [ -d $DOTDIR ]; then
+  echo "$DOTDIR already exists!!"
+  exit 1
+fi
+
+echo "----------------------------------------------------------"
+echo " Download dotfiles"
+echo "----------------------------------------------------------"
+git clone --recursive $REPOSITORY_URL $DOTDIR
+cd $DOTDIR
+echo ""
+
+echo "----------------------------------------------------------"
+echo " Deploy dotfiles"
+echo "----------------------------------------------------------"
+make deploy
+echo ""
+
+echo "----------------------------------------------------------"
+echo " Initialize configure"
+echo "----------------------------------------------------------"
+make initalize
+echo ""
