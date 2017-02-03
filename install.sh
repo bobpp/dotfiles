@@ -54,5 +54,5 @@ echo ""
 echo "----------------------------------------------------------"
 echo " Initialize configure"
 echo "----------------------------------------------------------"
-make initalize
+make initialize
 echo ""
