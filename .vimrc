@@ -24,43 +24,49 @@ NeoBundle 'Shougo/vimproc', {
 		\ 'unix' : 'make -f make_unix.mak',
 	\ },
 \ }
-NeoBundle 'pig.vim'
 NeoBundle 'pix/vim-align'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'kana/vim-fakeclip'
-NeoBundle 'mattn/gist-vim'
-NeoBundle 'mattn/webapi-vim'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'tpope/vim-rails'
 NeoBundle 'thinca/vim-ref'
-NeoBundle 'mattn/emmet-vim'
 NeoBundle 'Shougo/unite-outline'
-NeoBundle 'motemen/xslate-vim'
-NeoBundle 'cschlueter/vim-wombat'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'ssh://bobpp@a-chan.bobpp.jp/home/bobpp/git/TT2-syntax.vim.git'
 NeoBundle 'sudo.vim'
 NeoBundle 'banyan/recognize_charcode.vim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'y-uuki/unite-perl-module.vim'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'moznion/vim-cpanfile'
 NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'aklt/plantuml-syntax'
-NeoBundle 'Rip-Rip/clang_complete'
-NeoBundle 'tokorom/clang_complete-getopts-ios'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+
+" lang
+"" perl
+NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'motemen/xslate-vim'
+NeoBundle 'y-uuki/unite-perl-module.vim'
+NeoBundle 'moznion/vim-cpanfile'
+
+"" ruby
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
+
+"" javascript
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
+
+"" others
+NeoBundle 'motus/pig.vim'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'aklt/plantuml-syntax'
+
+" Theme
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'itchyny/lightline.vim'
 
 call neobundle#end()
 filetype plugin indent on 
