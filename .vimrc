@@ -1,7 +1,9 @@
 "==============================================================================
 " 基本的な設定
 "==============================================================================
-set nocompatible
+if &compatible
+  set nocompatible
+endif
 
 "==============================================================================
 " load plugins via NeoBundle
@@ -9,9 +11,9 @@ set nocompatible
 filetype off
 
 if has('vim_starting')
-	set rtp+=~/.vim/neobundle/
+	set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-call neobundle#rc(expand('~/.vim/bundle'))
+call neobundle#begin(expand('~/.vim/bundle'))
 
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc', {
@@ -60,12 +62,16 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 
+call neobundle#end()
+filetype plugin indent on 
+syntax on
+
+NeoBundleCheck
+
 "==============================================================================
 " Basic Setting
 "==============================================================================
 set backspace=2
-filetype plugin indent on 
-syntax on
 set nobackup
 nnoremap : ;
 nnoremap ; :
