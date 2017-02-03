@@ -15,7 +15,7 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
   zplug "b4b4r07/enhancd", use:init.sh
   zplug "plugins/bundler", from:oh-my-zsh
-  
+
   # Install plugins if there are plugins that have not been installed
   if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -23,7 +23,7 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
       echo; zplug install
     fi
   fi
-  
+
   zplug load --verbose
 fi
 
@@ -67,4 +67,3 @@ source ${HOME}/.zsh/bobpp-theme.zsh
 if [[ -e "$HOME/.zshrc.mine" ]]; then
   source "$HOME/.zshrc.mine"
 fi
-
