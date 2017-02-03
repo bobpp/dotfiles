@@ -1,1 +1,0 @@
-alias vagrant="nocorrect vagrant"
