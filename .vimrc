@@ -1,78 +1,62 @@
 "==============================================================================
 " 基本的な設定
 "==============================================================================
-if &compatible
+if !&compatible
   set nocompatible
 endif
 
-"==============================================================================
-" load plugins via NeoBundle
-"==============================================================================
-filetype off
+" reset augroup
+augroup ResetAutoCmd
+  autocmd!
+augroup END
 
-if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim/
+"==============================================================================
+" load plugins via Dein.vim
+"==============================================================================
+" dein settings {{{
+" 0. neovim / vim configure
+if has('nvim') " neovim
+  let s:dein_dir = empty($XDG_CACHE_HOME) ? expand('~/.cache/nvim/dein') : $XDG_CACHE_HOME . '/nvim/dein'
+  let s:dein_plugin_toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
+  let s:dein_lazy_plugin_toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein_lazy.toml'
+else " vim
+  let s:dein_dir = empty($XDG_CACHE_HOME) ? expand('~/.cache/vim/dein') : $XDG_CACHE_HOME . '/vim/dein'
+  let s:dein_plugin_toml_file = fnamemodify(expand('<sfile>'), ':h').'/.vim/dein.toml'
+  let s:dein_lazy_plugin_toml_file = fnamemodify(expand('<sfile>'), ':h').'/.vim/dein_lazy.toml'
 endif
-call neobundle#begin(expand('~/.vim/bundle'))
 
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc', {
-	\ 'build' : {
-		\ 'windows' : 'make -f make_mingw32.mak',
-		\ 'cygwin' : 'make -f make_cygwin.mak',
-		\ 'mac' : 'make -f make_mac.mak',
-		\ 'unix' : 'make -f make_unix.mak',
-	\ },
-\ }
-NeoBundle 'pix/vim-align'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'mileszs/ack.vim'
-NeoBundle 'kana/vim-fakeclip'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'sudo.vim'
-NeoBundle 'banyan/recognize_charcode.vim'
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
+" 1. auto dein.vim install
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+if !isdirectory(s:dein_repo_dir)
+  call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
+endif
+let &runtimepath = s:dein_repo_dir .",". &runtimepath
 
-" lang
-"" perl
-NeoBundle 'vim-perl/vim-perl'
-NeoBundle 'motemen/xslate-vim'
-NeoBundle 'y-uuki/unite-perl-module.vim'
-NeoBundle 'moznion/vim-cpanfile'
+" 2. dein configure
+let g:dein#install_max_processes = 16
+let g:dein#install_progress_type = 'title'
+let g:dein#install_message_type = 'none'
+let g:dein#enable_notification = 1
 
-"" ruby
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-rails'
+" 3. plugin configures
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+  call dein#load_toml(s:dein_plugin_toml_file, { 'lazy': 0 })
+  if filereadable(s:dein_lazy_plugin_toml_file)
+    call dein#load_toml(s:dein_lazy_plugin_toml_file, { 'lazy': 1 })
+  endif
+  call dein#end()
+  call dein#save_state()
+endif
 
-"" javascript
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'othree/javascript-libraries-syntax.vim'
+" 4. plugin auto install
+if has('vim_starting') && dein#check_install()
+  call dein#install()
+endif
 
-"" others
-NeoBundle 'motus/pig.vim'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'aklt/plantuml-syntax'
-
-" Theme
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'itchyny/lightline.vim'
-
-call neobundle#end()
 filetype plugin indent on 
 syntax on
-
-NeoBundleCheck
+" }}}
 
 "==============================================================================
 " Basic Setting
@@ -96,9 +80,6 @@ colorscheme solarized
 "  GetEFstatus() は下に記述
 "==============================================================================
 set laststatus=2
-let g:lightline = {
-\	'colorscheme': 'solarized'
-\ }
 
 "==============================================================================
 " 検索とか
@@ -200,13 +181,6 @@ let g:neosnippet#snippets_directory="~/.vim/snippets"
 " align
 "==============================================================================
 let g:Align_xstrlen=3
-
-"==============================================================================
-" yanktmp.vim
-"==============================================================================
-map <silent> sy :call YanktmpYank()<CR>
-map <silent> sp :call YanktmpPaste_p()<CR>
-map <silent> sP :call YanktmpPaste_P()<CR>
 
 "==============================================================================
 " javascript-libraries-syntax
