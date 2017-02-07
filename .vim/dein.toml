@@ -83,7 +83,7 @@ repo = 'vim-ruby/vim-ruby'
 [[plugins]]
 repo = 'tpope/vim-rails' 
 
-## javascript
+## html/javascript/css
 [[plugins]]
 repo = 'pangloss/vim-javascript'
 
@@ -96,6 +96,9 @@ hook_add = '''
   let g:used_javascript_libs = 'backbone,angularjs,angularui'
 '''
 
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
 ## others
 [[plugins]]
 repo  = 'cespare/vim-toml'
@@ -106,13 +109,12 @@ repo  = 'motus/pig.vim'
 on_ft = 'pig'
 
 [[plugins]]
-repo = 'tpope/vim-markdown'
+repo  = 'tpope/vim-markdown'
+on_ft = 'markdown'
 
 [[plugins]]
-repo = 'mattn/emmet-vim'
-
-[[plugins]]
-repo = 'aklt/plantuml-syntax'
+repo  = 'aklt/plantuml-syntax'
+on_ft = 'plantuml'
 
 # theme
 [[plugins]]
