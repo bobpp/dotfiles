@@ -1,0 +1,111 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc'
+build = 'make'
+
+[[plugins]]
+repo = 'pix/vim-align'
+
+[[plugins]]
+repo = 'Shougo/neocomplete'
+if   = 'has("lua")'
+
+[[plugins]]
+repo = 'mileszs/ack.vim'
+
+[[plugins]]
+repo = 'kana/vim-fakeclip'
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'banyan/recognize_charcode.vim'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+# unite.vim
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/unite-outline'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# lang
+## perl
+[[plugins]]
+repo = 'vim-perl/vim-perl'
+
+[[plugins]]
+repo = 'motemen/xslate-vim'
+
+[[plugins]]
+repo = 'y-uuki/unite-perl-module.vim'
+
+[[plugins]]
+repo = 'moznion/vim-cpanfile'
+
+## ruby
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+
+[[plugins]]
+repo = 'tpope/vim-rails' 
+
+## javascript
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+[[plugins]]
+repo = 'othree/javascript-libraries-syntax.vim'
+
+## others
+[[plugins]]
+repo  = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'motus/pig.vim'
+
+[[plugins]]
+repo = 'tpope/vim-markdown'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+
+# theme
+[[plugins]]
+repo     = 'altercation/vim-colors-solarized'
+hook_add = 'colorscheme solarized'
+
+[[plugins]]
+repo     = 'itchyny/lightline.vim'
+hook_add = "let g:lightline = {	'colorscheme': 'solarized' }"
+
