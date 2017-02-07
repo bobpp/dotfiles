@@ -6,7 +6,10 @@ repo = 'Shougo/vimproc'
 build = 'make'
 
 [[plugins]]
-repo = 'pix/vim-align'
+repo     = 'pix/vim-align'
+hook_add = '''
+  let g:Align_xstrlen = 3
+'''
 
 [[plugins]]
 repo = 'Shougo/neocomplete'
@@ -38,6 +41,13 @@ repo = 'Shougo/neosnippet'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
 
 # unite.vim
 [[plugins]]
@@ -81,7 +91,10 @@ repo = 'pangloss/vim-javascript'
 repo = 'kchmck/vim-coffee-script'
 
 [[plugins]]
-repo = 'othree/javascript-libraries-syntax.vim'
+repo     = 'othree/javascript-libraries-syntax.vim'
+hook_add = '''
+  let g:used_javascript_libs = 'backbone,angularjs,angularui'
+'''
 
 ## others
 [[plugins]]
@@ -89,7 +102,8 @@ repo  = 'cespare/vim-toml'
 on_ft = 'toml'
 
 [[plugins]]
-repo = 'motus/pig.vim'
+repo  = 'motus/pig.vim'
+on_ft = 'pig'
 
 [[plugins]]
 repo = 'tpope/vim-markdown'
@@ -102,10 +116,15 @@ repo = 'aklt/plantuml-syntax'
 
 # theme
 [[plugins]]
-repo     = 'altercation/vim-colors-solarized'
-hook_add = 'colorscheme solarized'
+repo        = 'altercation/vim-colors-solarized'
+script_type = 'colors'
+hook_add    = '''
+  colorscheme solarized
+'''
 
 [[plugins]]
 repo     = 'itchyny/lightline.vim'
-hook_add = "let g:lightline = {	'colorscheme': 'solarized' }"
+hook_add = '''
+  let g:lightline = { 'colorscheme': 'solarized' }
+'''
 
