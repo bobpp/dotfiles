@@ -116,6 +116,10 @@ on_ft = 'markdown'
 repo  = 'aklt/plantuml-syntax'
 on_ft = 'plantuml'
 
+[[plugins]]
+repo  = 'ekalinin/Dockerfile.vim'
+on_ft = 'Dockerfile'
+
 # theme
 [[plugins]]
 repo        = 'altercation/vim-colors-solarized'
