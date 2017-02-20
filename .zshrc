@@ -5,6 +5,9 @@
 [ -f $HOME/.shrc ] && source $HOME/.shrc
 bindkey -e
 
+# not plugin completion configure
+#fpath=($HOME/.zsh/completion-external $fpath)
+
 # zplug install plugins
 if [[ -f $HOME/.zplug/init.zsh ]]; then
   source $HOME/.zplug/init.zsh
@@ -12,9 +15,12 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "yous/vanilli.sh"
   zplug "zsh-users/zsh-completions"
   zplug "syohex/zsh-perl-completions"
+  zplug "plugins/bundler", from:oh-my-zsh
+  zplug "plugins/golang", from:oh-my-zsh
+  zplug "plugins/docker", from:oh-my-zsh
+  zplug "plugins/docker-compose", from:oh-my-zsh
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
   zplug "b4b4r07/enhancd", use:init.sh
-  zplug "plugins/bundler", from:oh-my-zsh
 
   # Install plugins if there are plugins that have not been installed
   if ! zplug check --verbose; then

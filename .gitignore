@@ -1,3 +1,4 @@
-.vim/.netrwhist
-.vim/swap
-.vim/bundle
+/.vim/.netrwhist
+/.vim/swap
+/.vim/bundle
+/.config/hub
