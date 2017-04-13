@@ -69,6 +69,9 @@ fi
 # my theme
 source ${HOME}/.zsh/bobpp-theme.zsh
 
+# my custom plugin
+source ${HOME}/.zsh/iterm-title.zsh
+
 # Load host-specify configure
 if [[ -e "$HOME/.zshrc.mine" ]]; then
   source "$HOME/.zshrc.mine"
