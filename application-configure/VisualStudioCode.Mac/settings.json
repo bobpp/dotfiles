@@ -1,0 +1,52 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/bundle": true
+    },
+    "files.associations": {
+        "*.schema": "ruby"
+    },
+    "editor.fontSize": 16,
+    "editor.fontFamily": "'Ricty Discord', Menlo, Monaco, 'Courier New', monospace",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.editor.enablePreview": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "window.restoreWindows": "none",
+    "material-icon-theme.folders.icons": "classic",
+    "vim.disableAnnoyingNeovimMessage": true,
+    "editor.detectIndentation": true,
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
+    "[csharp]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false,
+        "editor.formatOnPaste": false
+    },
+    "[cpp]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false,
+        "editor.formatOnPaste": false
+    },
+    "[diagram]": {
+        "editor.formatOnSave": false
+    },
+    "json.format.enable": false,
+    "editor.renderWhitespace": "none",
+    "window.zoomLevel": 0,
+}
