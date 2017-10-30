@@ -13,3 +13,7 @@ update:
 	git pull origin master
 	git submodule update --init --recursive
 	git submodule foreach git pull origin master
+
+configure-export:
+	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/export.sh
+
