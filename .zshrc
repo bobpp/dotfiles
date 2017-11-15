@@ -19,6 +19,7 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "plugins/golang", from:oh-my-zsh
   zplug "plugins/docker", from:oh-my-zsh
   zplug "plugins/docker-compose", from:oh-my-zsh
+  zplug "plugins/aws", from:oh-my-zsh
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
   zplug "b4b4r07/enhancd", use:init.sh
 
@@ -44,7 +45,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # history
 export HISTFILE=${HOME}/.zsh_history
-export HISTSIZE=1000
+export HISTSIZE=1000000
 export SAVEHIST=1000000
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups

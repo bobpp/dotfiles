@@ -1,7 +1,8 @@
 # Alias
-if [ $(uname) = "Darwin" ]; then
+os_architecture=$(uname)
+if [ $os_architecture = "Darwin" ]; then
   alias ls='ls -G'
-elif [ $(uname) = "Linux" ]; then
+elif [ $os_architecture = "Linux" ]; then
   alias ls='ls -F --color=always'
 fi
 alias ll='ls -l'
@@ -10,4 +11,8 @@ alias vi=vim
 alias screen='screen -U'
 alias today="date '+%Y%m%d'"
 alias view='vim -R'
+
+if [ $os_architecture = "Darwin" ]; then
+  alias scratchpad='code -n'
+fi
 
