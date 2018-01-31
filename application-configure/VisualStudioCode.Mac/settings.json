@@ -46,6 +46,9 @@
     "[diagram]": {
         "editor.formatOnSave": false
     },
+    "[slim]": {
+        "editor.tabSize": 2
+    },
     "json.format.enable": false,
     "editor.renderWhitespace": "none",
     "window.zoomLevel": 0,

@@ -2,6 +2,7 @@ DmitryDorofeev.empty-indent
 EditorConfig.EditorConfig
 Leopotam.csharpfixformat
 PKief.material-icon-theme
+bungcip.better-toml
 jebbs.plantuml
 mohsen1.prettify-json
 ms-vscode.cpptools
