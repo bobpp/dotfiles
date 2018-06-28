@@ -6,7 +6,6 @@
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/bundle": true
     },
     "files.associations": {
         "*.schema": "ruby"
@@ -22,22 +21,27 @@
         "comments": true,
         "strings": true
     },
+    "editor.detectIndentation": true,
+    "editor.renderWhitespace": "none",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Solarized Dark",
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "material-icon-theme",
     "window.restoreWindows": "none",
-    "material-icon-theme.folders.icons": "classic",
-    "vim.disableAnnoyingNeovimMessage": true,
-    "editor.detectIndentation": true,
+    "window.zoomLevel": 0,
+    "emptyIndent.exclude": [
+        ".md"
+    ],
     "[ruby]": {
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
     },
+    "ruby.intellisense": "rubyLocate",
     "[csharp]": {
         "editor.formatOnSave": false,
         "editor.formatOnType": false,
         "editor.formatOnPaste": false
     },
+    "csharp.format.enable": false,
     "[cpp]": {
         "editor.formatOnSave": false,
         "editor.formatOnType": false,
@@ -49,7 +53,13 @@
     "[slim]": {
         "editor.tabSize": 2
     },
+    "[markdown]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false,
+        "editor.formatOnPaste": false,
+        "files.trimTrailingWhitespace": false
+    },
+    "go.formatTool": "goimports",
     "json.format.enable": false,
-    "editor.renderWhitespace": "none",
-    "window.zoomLevel": 0,
+    "workbench.settings.enableNaturalLanguageSearch": false,
 }
