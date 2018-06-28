@@ -3,10 +3,6 @@
 
 # basic shell configure
 [ -f $HOME/.shrc ] && source $HOME/.shrc
-bindkey -e
-
-# not plugin completion configure
-#fpath=($HOME/.zsh/completion-external $fpath)
 
 # zplug install plugins
 if [[ -f $HOME/.zplug/init.zsh ]]; then
@@ -32,6 +28,8 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
 
   zplug load --verbose
 fi
+
+bindkey -e
 
 # shell opts
 unsetopt correct_all
