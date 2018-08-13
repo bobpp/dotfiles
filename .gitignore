@@ -2,3 +2,9 @@
 /.vim/swap
 /.vim/bundle
 /.config/hub
+/.config/gcloud/
+/.config/.mono/
+/.config/configstore/
+/.config/NuGet/
+/.config/stetic/
+/.config/xbuild/
