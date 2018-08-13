@@ -1,8 +1,5 @@
 # Mac only
 if [[ $(uname) = "Darwin" ]]; then
-  # Karabiner configure
-  ln -sfnv $DOTPATH/application-configure/org.pqrs.Karabiner.plist ~/Library/Preferences
-
   # Visual Studio Code
   if [[ ! -d ~/Library/Application\ Support/Code/User ]]; then
     mkdir -p ~/Library/Application\ Support/Code/User
