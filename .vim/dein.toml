@@ -81,7 +81,7 @@ repo = 'moznion/vim-cpanfile'
 repo = 'vim-ruby/vim-ruby'
 
 [[plugins]]
-repo = 'tpope/vim-rails' 
+repo = 'tpope/vim-rails'
 
 ## html/javascript/css
 [[plugins]]
@@ -124,13 +124,7 @@ on_ft = 'Dockerfile'
 [[plugins]]
 repo        = 'altercation/vim-colors-solarized'
 script_type = 'colors'
-hook_add    = '''
-  colorscheme solarized
-'''
 
 [[plugins]]
 repo     = 'itchyny/lightline.vim'
-hook_add = '''
-  let g:lightline = { 'colorscheme': 'solarized' }
-'''
 

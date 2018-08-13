@@ -54,8 +54,12 @@ if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 
-filetype plugin indent on 
+filetype plugin indent on
 syntax on
+
+colorscheme solarized
+let g:lightline = { 'colorscheme': 'solarized' }
+
 " }}}
 
 "==============================================================================
