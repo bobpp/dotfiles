@@ -15,33 +15,6 @@
                 },
                 "rules": [
                     {
-                        "description": "Change caps_lock to control if pressed with other keys. (rev 2)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_control"
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "hold_down_milliseconds": 500,
-                                        "key_code": "caps_lock"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "コマンドキーを単体で押したときに、英数・かなキーを送信する。（左コマンドキーは英数、右コマンドキーはかな） + ターミナル(iTerm2, Terminal.app, Hyper)上では Left Command と Left Option を入れ替える。（ただし Left Command のみを押した場合は英数, Tab + Command は有効）",
                         "manipulators": [
                             {
@@ -186,6 +159,30 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "caps lock with left shift + left command",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_command",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift"
+                                        ],
+                                        "optional": [
+                                            "caps_lock"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "caps_lock"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
@@ -304,7 +301,16 @@
             ],
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": [],
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": {
+                        "key_code": "left_control"
+                    }
+                }
+            ],
             "virtual_hid_keyboard": {
                 "country_code": 0
             }

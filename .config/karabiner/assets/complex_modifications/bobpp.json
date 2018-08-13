@@ -146,6 +146,26 @@
                     "type": "basic"
                 }
             ]
+        },
+        {
+            "description": "caps lock with left shift + left command",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "left_command",
+                        "modifiers": {
+                            "mandatory": [ "left_shift" ],
+                            "optional": [ "caps_lock" ]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "caps_lock"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
