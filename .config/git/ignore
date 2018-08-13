@@ -1,4 +1,4 @@
-m backup files
+# backup files
 *~
 *.swp
 *.swo
@@ -15,4 +15,3 @@ m backup files
 # ctags
 doc/tags
 doc/tags-ja
-
