@@ -60,6 +60,12 @@
         "files.trimTrailingWhitespace": false
     },
     "go.formatTool": "goimports",
-    "json.format.enable": false,
     "workbench.settings.enableNaturalLanguageSearch": false,
+    "json.format.enable": false,
+    "search.followSymlinks": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "openInGitHub.providerType": "github",
+    "openInGitHub.requireSelectionForLines": true,
+    "git.autofetch": true,
 }
