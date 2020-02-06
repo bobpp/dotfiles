@@ -57,11 +57,17 @@ fi
 # load peco functions
 if [[ -n $(which peco 2>/dev/null) ]]; then
   for f (~/.zsh/peco-sources/*) source "${f}"
+
   bindkey '^r' peco-select-history
   bindkey '^g' peco-git-branch-checkout
-  if [[ -n $(which ghq 2>/dev/null) ]]; then
-    alias ghqr='cd $(ghq root)/$(ghq list | peco)'
-  fi
+  alias ghqp=peco-select-ghq
+  alias cdp=peco-move-projects
+  alias codep=peco-open-code-projects
+fi
+
+# load direnv
+if [[ -n $(which direnv 2>/dev/null) ]]; then
+  eval "$(direnv hook zsh)"
 fi
 
 # my theme
