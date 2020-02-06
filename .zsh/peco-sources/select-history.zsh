@@ -5,11 +5,8 @@ function peco-select-history() {
     else
         tac="tail -r"
     fi
-    BUFFER=$(\history -n 1 | \
-        eval $tac | \
-        peco --query "$LBUFFER")
+    BUFFER="$(\history -n 1 | eval $tac | peco --query "$LBUFFER" | sed 's/\\n/\'$'\n/g')"
     CURSOR=$#BUFFER
     zle clear-screen
 }
 zle -N peco-select-history
-
