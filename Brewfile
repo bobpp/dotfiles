@@ -28,3 +28,4 @@ mas 'Slack', id: 803453959
 mas 'Pixelmator', id: 407963104
 mas 'LINE', id: 539883307
 mas 'Kindle', id: 405399194
+mas 'Evernote', id: 406056744
