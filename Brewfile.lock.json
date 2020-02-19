@@ -2,18 +2,18 @@
   "entries": {
     "tap": {
       "homebrew/core": {
-        "revision": "c0f6e1a6da5f1c61a8fd3f0043cff8c3f02b8c8d"
+        "revision": "6f0c1d6d0f63211a96e0dd030a787ca8a093f260"
       },
       "homebrew/bundle": {
         "revision": "677f39d62a8aefdcbc091f193af1f7ddbee0052d"
       },
       "homebrew/cask": {
-        "revision": "c2ad5eed3cf3aeb4d51573756b70a7efbaf67744"
+        "revision": "18661a4d6e198e5b585c89d4efb259f801b76171"
       }
     },
     "cask": {
       "alfred": {
-        "version": "4.0.7_1131",
+        "version": "4.0.8_1135",
         "options": {
           "full_name": "alfred",
           "args": {
@@ -22,7 +22,7 @@
         }
       },
       "google-chrome": {
-        "version": "79.0.3945.117",
+        "version": "80.0.3987.106",
         "options": {
           "full_name": "google-chrome",
           "args": {
@@ -39,7 +39,7 @@
         }
       },
       "karabiner-elements": {
-        "version": "12.8.0",
+        "version": "12.9.0",
         "options": {
           "full_name": "karabiner-elements",
           "args": {
@@ -48,7 +48,7 @@
         }
       },
       "visual-studio-code": {
-        "version": "1.41.1",
+        "version": "1.42.1",
         "options": {
           "full_name": "visual-studio-code",
           "args": {
@@ -75,7 +75,7 @@
         }
       },
       "docker": {
-        "version": "2.1.0.5,40693",
+        "version": "2.2.0.3,42716",
         "options": {
           "full_name": "docker",
           "args": {
@@ -84,7 +84,7 @@
         }
       },
       "iterm2": {
-        "version": "3.3.7",
+        "version": "3.3.9",
         "options": {
           "full_name": "iterm2",
           "args": {
@@ -231,6 +231,56 @@
             }
           }
         }
+      },
+      "nodenv": {
+        "version": "1.3.1",
+        "bottle": false
+      },
+      "node-build": {
+        "version": "4.7.2",
+        "bottle": false
+      },
+      "wget": {
+        "version": "1.20.3_2",
+        "bottle": {
+          "cellar": "/usr/local/Cellar",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/wget-1.20.3_2.catalina.bottle.tar.gz",
+              "sha256": "ef65c759c5097a36323fa9c77756468649e8d1980a3a4e05695c05e39568967c"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/wget-1.20.3_2.mojave.bottle.tar.gz",
+              "sha256": "28f4090610946a4eb207df102d841de23ced0d06ba31cb79e040d883906dcd4f"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/wget-1.20.3_2.high_sierra.bottle.tar.gz",
+              "sha256": "91dd0caca9bd3f38c439d5a7b6f68440c4274945615fae035ff0a369264b8a2f"
+            }
+          }
+        }
+      },
+      "cmake": {
+        "version": "3.16.4",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/cmake-3.16.4.catalina.bottle.tar.gz",
+              "sha256": "f2133296c86e3b92305d34eb181a87d7b9c17a43b233264bdd02611afa2a856c"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/cmake-3.16.4.mojave.bottle.tar.gz",
+              "sha256": "965268f016649761ce795b8fe9998cfe3929d849bfd1789e4e6e4862f6e43366"
+            },
+            "high_sierra": {
+              "url": "https://homebrew.bintray.com/bottles/cmake-3.16.4.high_sierra.bottle.tar.gz",
+              "sha256": "b94c0d7e2290ce04306f2a0754c68347d5b2e87121405751658f0c441a30c087"
+            }
+          }
+        }
       }
     },
     "mas": {
@@ -266,17 +316,21 @@
       "Kindle": {
         "id": "405399194",
         "version": "1.27.0"
+      },
+      "Evernote": {
+        "id": "406056744",
+        "version": "7.14"
       }
     }
   },
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.2.5",
-        "HOMEBREW_PREFIX": "/Users/bobpp/local",
-        "Homebrew/homebrew-core": "c0f6e1a6da5f1c61a8fd3f0043cff8c3f02b8c8d",
-        "CLT": "11.0.33.17",
-        "Xcode": "11.3",
+        "HOMEBREW_VERSION": "2.2.6",
+        "HOMEBREW_PREFIX": "/usr/local",
+        "Homebrew/homebrew-core": "6f0c1d6d0f63211a96e0dd030a787ca8a093f260",
+        "CLT": "11.3.1.0.1.1576735732",
+        "Xcode": "11.3.1",
         "macOS": "10.15.3"
       }
     }
