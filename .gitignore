@@ -9,3 +9,4 @@
 /.config/stetic/
 /.config/xbuild/
 /.config/karabiner/automatic_backups
+/Brewfile.lock.json
