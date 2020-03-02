@@ -27,6 +27,12 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   fi
 
   zplug load --verbose
+
+  # Enhancd configure
+  if zplug check "b4b4r07/enhancd"; then
+    export ENHANCD_FILTER=peco
+    export ENHANCD_DOT_SHOW_FULLPATH=1
+  fi
 fi
 
 bindkey -e
@@ -48,19 +54,14 @@ setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt share_history
 
-# Enhancd configure
-if zplug check "b4b4r07/enhancd"; then
-  export ENHANCD_FILTER=peco
-  export ENHANCD_DOT_SHOW_FULLPATH=1
-fi
-
 # load peco functions
 if [[ -n $(which peco 2>/dev/null) ]]; then
   for f (~/.zsh/peco-sources/*) source "${f}"
 
   bindkey '^r' peco-select-history
   bindkey '^g' peco-git-branch-checkout
-  alias ghqp=peco-select-ghq
+  alias ghqp=peco-move-select-ghq
+  alias ghqcode=peco-code-select-ghq
   alias cdp=peco-move-projects
   alias codep=peco-open-code-projects
 fi
