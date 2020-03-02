@@ -11,7 +11,7 @@
         "*.schema": "ruby"
     },
     "editor.fontSize": 16,
-    "editor.fontFamily": "'Ricty Discord', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'Ricty Diminished Discord', Menlo, Monaco, 'Courier New', monospace",
     "editor.formatOnType": true,
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
