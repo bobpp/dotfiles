@@ -10,3 +10,5 @@
 /.config/xbuild/
 /.config/karabiner/automatic_backups
 /Brewfile.lock.json
+/Brewfile.local
+/Brewfile.local.lock.json
