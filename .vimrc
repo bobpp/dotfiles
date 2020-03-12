@@ -30,7 +30,6 @@ let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 if !isdirectory(s:dein_repo_dir)
   call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
-let &runtimepath = s:dein_repo_dir .",". &runtimepath
 
 " 2. dein configure
 let g:dein#install_max_processes = 16
@@ -39,15 +38,27 @@ let g:dein#install_message_type = 'none'
 let g:dein#enable_notification = 1
 
 " 3. plugin configures
+if has('nvim')
+  if empty($XDG_CACHE_HOME)
+    set runtimepath+=~/.cache/nvim/dein/repos/github.com/Shougo/dein.vim
+  else
+    set runtimepath+=$XDG_CACHE_HOME/nvim/dein/repos/github.com/Shougo/dein.vim
+  endif
+else 
+  if empty($XDG_CACHE_HOME)
+    set runtimepath+=~/.cache/vim/dein/repos/github.com/Shougo/dein.vim
+  else
+    set runtimepath+=$XDG_CACHE_HOME/vim/dein/repos/github.com/Shougo/dein.vim
+  endif
+endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   call dein#load_toml(s:dein_plugin_toml_file, { 'lazy': 0 })
-  if filereadable(s:dein_lazy_plugin_toml_file)
-    call dein#load_toml(s:dein_lazy_plugin_toml_file, { 'lazy': 1 })
-  endif
+  call dein#load_toml(s:dein_lazy_plugin_toml_file, { 'lazy': 1 })
   call dein#end()
   call dein#save_state()
 endif
+
 
 " 4. plugin auto install
 if has('vim_starting') && dein#check_install()
@@ -57,8 +68,6 @@ endif
 filetype plugin indent on
 syntax on
 
-colorscheme solarized
-let g:lightline = { 'colorscheme': 'solarized' }
 
 " }}}
 
@@ -75,22 +84,22 @@ set wildmode=longest,list:longest
 "==============================================================================
 " color scheme
 "==============================================================================
-set t_Co=256
 set background=dark
-" colorscheme solarized
+colorscheme hybrid
 
 "==============================================================================
 " ステータスライン
 "==============================================================================
 set laststatus=2
+set noshowmode
+let g:lightline = { 'colorscheme': 'wombat' }
 
 "==============================================================================
 " 検索とか
 "==============================================================================
 set ignorecase
 set smartcase
-" grep を vimgrep に固定
-set grepprg=internal
+set grepprg=internal "grep を vimgrep に固定
 
 "==============================================================================
 " tabs/indents
@@ -112,10 +121,10 @@ endif
 runtime! macros/matchit.vim
 
 augroup myfiletypes
-	" Clear old autocmds in group
-	autocmd!
-	" autoindent with two spaces, always expand tabs
-	autocmd FileType ruby,eruby,yaml set ai ts=2 sts=2 shiftwidth=2 expandtab
+  " Clear old autocmds in group
+  autocmd!
+  " autoindent with two spaces, always expand tabs
+  autocmd FileType ruby,eruby,yaml set ai ts=2 sts=2 shiftwidth=2 expandtab
 augroup END
 
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
