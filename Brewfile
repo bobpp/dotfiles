@@ -2,17 +2,6 @@ tap 'homebrew/core'
 tap 'homebrew/bundle'
 tap 'homebrew/homebrew-cask'
 
-brew 'ghq'
-brew 'mas'
-brew 'peco'
-brew 'wget'
-brew 'cmake'
-brew 'rbenv'
-brew 'ruby-install'
-brew 'direnv'
-brew 'nodenv'
-brew 'node-build'
-
 cask_args appdir: '/Applications'
 cask 'alfred'
 cask 'appcleaner'
@@ -33,3 +22,14 @@ mas 'Pixelmator', id: 407963104
 mas 'LINE', id: 539883307
 mas 'Kindle', id: 405399194
 mas 'Evernote', id: 406056744
+
+brew 'ghq'
+brew 'mas'
+brew 'peco'
+brew 'wget'
+brew 'cmake'
+brew 'rbenv'
+brew 'ruby-build'
+brew 'direnv'
+brew 'nodenv'
+brew 'node-build'
