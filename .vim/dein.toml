@@ -120,11 +120,11 @@ on_ft = 'plantuml'
 repo  = 'ekalinin/Dockerfile.vim'
 on_ft = 'Dockerfile'
 
-# theme
 [[plugins]]
-repo        = 'altercation/vim-colors-solarized'
-script_type = 'colors'
+repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
-repo     = 'itchyny/lightline.vim'
+repo = 'itchyny/lightline.vim'
 
+[[plugins]]
+repo = 'guns/xterm-color-table.vim'
