@@ -85,7 +85,7 @@ set wildmode=longest,list:longest
 " color scheme
 "==============================================================================
 set background=dark
-colorscheme hybrid
+colorscheme solarized
 
 "==============================================================================
 " ステータスライン
