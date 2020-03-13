@@ -84,6 +84,7 @@ set wildmode=longest,list:longest
 "==============================================================================
 " color scheme
 "==============================================================================
+let g:solarized_termcolors=16
 set background=dark
 colorscheme solarized
 
@@ -92,7 +93,7 @@ colorscheme solarized
 "==============================================================================
 set laststatus=2
 set noshowmode
-let g:lightline = { 'colorscheme': 'wombat' }
+let g:lightline = { 'colorscheme': 'solarized' }
 
 "==============================================================================
 " 検索とか
