@@ -11,6 +11,8 @@ cask 'google-japanese-ime'
 cask 'iterm2'
 cask 'karabiner-elements'
 cask 'visual-studio-code'
+cask 'duet'
+cask 'synergy'
 
 mas '1Password', id: 1333542190
 mas 'Day One Classic', id: 422304217
