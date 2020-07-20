@@ -14,8 +14,13 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "zsh-users/zsh-completions"
   zplug "plugins/git", from:oh-my-zsh
   zplug "plugins/bundler", from:oh-my-zsh
+  # Load host specify plugins
   if [[ -f $HOME/.zplug.mine ]]; then
     source $HOME/.zplug.mine
+  fi
+  # Load company specify plugins
+  if [[ -f $HOME/.zplug.company ]]; then
+    source $HOME/.zplug.company
   fi
 
   # Install plugins if there are plugins that have not been installed
@@ -80,4 +85,9 @@ source ${HOME}/.zsh/iterm-title.zsh
 # Load host-specify configure
 if [[ -e "$HOME/.zshrc.mine" ]]; then
   source "$HOME/.zshrc.mine"
+fi
+
+# Load company specify configure
+if [[ -e "$HOME/.zshrc.company" ]]; then
+  source "$HOME/.zshrc.company"
 fi

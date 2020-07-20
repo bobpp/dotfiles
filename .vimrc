@@ -195,3 +195,9 @@ if filereadable($HOME . '/.vimrc.mine')
   source $HOME/.vimrc.mine
 endif
 
+"==============================================================================
+" Load .company ファイル
+"==============================================================================
+if filereadable($HOME . '/.vimrc.company')
+  source $HOME/.vimrc.company
+endif
