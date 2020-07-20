@@ -10,9 +10,7 @@ initialize:
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/init.sh
 
 update:
-	git pull origin master
-	git submodule update --init --recursive
-	git submodule foreach git pull origin master
+	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/update.sh
 
 configure-export:
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/export.sh
