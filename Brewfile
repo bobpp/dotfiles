@@ -12,6 +12,7 @@ cask 'iterm2'
 cask 'karabiner-elements'
 cask 'visual-studio-code'
 cask 'duet'
+cask 'discord'
 
 brew 'ghq'
 brew 'mas'
