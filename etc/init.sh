@@ -13,4 +13,7 @@ if [[ $(uname) = "Darwin" ]]; then
   if [[ -f $DOTPATH/Brewfile.local ]]; then
     brew bundle --file=$DOTPATH/Brewfile.local
   fi
+
+  show_progress "Import configure from Mackup"
+  mackup restore
 fi

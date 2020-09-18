@@ -24,6 +24,7 @@ brew 'ruby-build'
 brew 'direnv'
 brew 'nodenv'
 brew 'node-build'
+brew 'mackup'
 brew 'rcmdnk/rcmdnkpac/screenutf8'
 
 mas '1Password', id: 1333542190
