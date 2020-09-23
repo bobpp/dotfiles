@@ -14,6 +14,7 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "zsh-users/zsh-completions"
   zplug "plugins/git", from:oh-my-zsh
   zplug "plugins/bundler", from:oh-my-zsh
+  zplug "plugins/docker", from:oh-my-zsh
   # Load host specify plugins
   if [[ -f $HOME/.zplug.mine ]]; then
     source $HOME/.zplug.mine
@@ -69,6 +70,20 @@ if [[ -n $(which peco 2>/dev/null) ]]; then
   alias ghqcode=peco-code-select-ghq
   alias cdp=peco-move-projects
   alias codep=peco-open-code-projects
+fi
+
+if [ $TERM_PROGRAM = "iTerm.app" ]; then
+  function ssh-profile-change () {
+    # set profile
+    echo -ne "\033]1337;SetProfile=remote\a"
+
+    # ssh login
+    /usr/bin/ssh "$@"
+
+    # set profile(default)
+    echo -ne "\033]1337;SetProfile=Default\a"
+  }
+  alias ssh=ssh-profile-change
 fi
 
 # load direnv
