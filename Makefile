@@ -13,6 +13,5 @@ initialize:
 update:
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/update.sh
 
-configure-export:
+export:
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/export.sh
-
