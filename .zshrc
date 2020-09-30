@@ -15,6 +15,8 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   zplug "plugins/git", from:oh-my-zsh
   zplug "plugins/bundler", from:oh-my-zsh
   zplug "plugins/docker", from:oh-my-zsh
+  zplug "plugins/docker-compose", from:oh-my-zsh
+
   # Load host specify plugins
   if [[ -f $HOME/.zplug.mine ]]; then
     source $HOME/.zplug.mine
@@ -51,6 +53,8 @@ setopt no_flow_control
 
 # completion configure
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # history
 export HISTFILE=${HOME}/.zsh_history
