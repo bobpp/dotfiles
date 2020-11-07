@@ -11,7 +11,7 @@ initialize:
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/init.sh
 
 update:
-	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/update.sh
+	@DOTPATH=$(DOTPATH) zsh $(DOTPATH)/etc/update.sh
 
 export:
 	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/export.sh
