@@ -13,6 +13,7 @@ cask 'karabiner-elements'
 cask 'visual-studio-code'
 cask 'duet'
 cask 'discord'
+cask '1password'
 
 brew 'ghq'
 brew 'mas'
@@ -27,7 +28,6 @@ brew 'node-build'
 brew 'mackup'
 brew 'rcmdnk/rcmdnkpac/screenutf8'
 
-mas '1Password', id: 1333542190
 mas 'Day One Classic', id: 422304217
 mas 'Keynote', id: 409183694
 mas 'Magnet', id: 441258766
