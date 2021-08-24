@@ -76,7 +76,7 @@ if [[ -n $(which peco 2>/dev/null) ]]; then
   alias codep=peco-open-code-projects
 fi
 
-if [ $TERM_PROGRAM = "iTerm.app" ]; then
+if [ "${TERM_PROGRAM}" = "iTerm.app" ]; then
   function ssh-profile-change () {
     # set profile
     echo -ne "\033]1337;SetProfile=remote\a"
@@ -91,7 +91,8 @@ if [ $TERM_PROGRAM = "iTerm.app" ]; then
 fi
 
 # load direnv
-if [[ -n $(which direnv 2>/dev/null) ]]; then
+if [[ -n $(which direnv &> /dev/null) ]]; then
+  echo "test"
   eval "$(direnv hook zsh)"
 fi
 
