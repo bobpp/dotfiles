@@ -9,13 +9,13 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
   source $HOME/.zplug/init.zsh
 
   zplug "yous/vanilli.sh"
-  zplug "b4b4r07/enhancd", use:init.sh
-  zplug "zsh-users/zsh-syntax-highlighting", defer:2
+  # zplug "b4b4r07/enhancd", use:init.sh
   zplug "zsh-users/zsh-completions"
   zplug "plugins/git", from:oh-my-zsh
   zplug "plugins/bundler", from:oh-my-zsh
   zplug "plugins/docker", from:oh-my-zsh
   zplug "plugins/docker-compose", from:oh-my-zsh
+  zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
   # Load host specify plugins
   if [[ -f $HOME/.zplug.mine ]]; then
