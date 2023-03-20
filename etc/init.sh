@@ -5,7 +5,7 @@ if [[ $(uname) = "Darwin" ]]; then
   # Homebrew
   if [[ -z $(which brew 2>/dev/null) ]]; then
     show_progress "Installing Homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
   show_progress "Installing Homebrew Applications"
