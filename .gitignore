@@ -9,6 +9,7 @@
 /.config/stetic/
 /.config/xbuild/
 /.config/karabiner/automatic_backups
+/.config/iterm2/
 /Brewfile.lock.json
 /Brewfile.local
 /Brewfile.local.lock.json
