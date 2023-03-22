@@ -13,7 +13,7 @@ if [[ $(uname) = "Darwin" ]]; then
       eval $(/usr/local/bin/brew shellenv)
     fi
     # Apple Silicon Mac
-    if [[ -e /opt/homebrew/bin/brew]]; then
+    if [[ -e /opt/homebrew/bin/brew ]]; then
       eval $(/opt/homebrew/bin/brew shellenv)
     fi
   fi
