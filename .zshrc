@@ -70,7 +70,7 @@ if [[ -n $(which peco 2>/dev/null) ]]; then
 
   bindkey '^r' peco-select-history
   bindkey '^g' peco-git-branch-checkout
-  alias ghqp=peco-move-select-ghq
+  alias ghqcd=peco-move-select-ghq
   alias ghqcode=peco-code-select-ghq
   alias cdp=peco-move-projects
   alias codep=peco-open-code-projects
