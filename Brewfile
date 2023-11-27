@@ -1,8 +1,5 @@
-tap 'homebrew/core'
-tap 'homebrew/bundle'
-tap 'homebrew/homebrew-cask'
-
 cask_args appdir: '/Applications'
+cask 'arc'
 cask 'alfred'
 cask 'appcleaner'
 cask 'docker'
@@ -13,22 +10,17 @@ cask 'visual-studio-code'
 cask 'discord'
 cask '1password'
 cask 'charles'
-cask 'notion'
 cask 'hot'
 cask 'ears'
 cask 'ankerwork'
 cask 'kindle'
 
+brew 'asdf'
 brew 'ghq'
 brew 'mas'
 brew 'peco'
 brew 'wget'
-brew 'cmake'
-brew 'rbenv'
-brew 'ruby-build'
 brew 'direnv'
-brew 'nodenv'
-brew 'node-build'
 brew 'mackup'
 brew 'rcmdnk/rcmdnkpac/screenutf8'
 brew 'jq'
@@ -42,4 +34,3 @@ mas 'Marked', id: 448925439
 mas 'Slack', id: 803453959
 mas 'Pixelmator', id: 407963104
 mas 'LINE', id: 539883307
-mas 'Evernote', id: 406056744
