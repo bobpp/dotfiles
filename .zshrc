@@ -96,11 +96,7 @@ if [[ -n $(which direnv &> /dev/null) ]]; then
   eval "$(direnv hook zsh)"
 fi
 
-# my theme
-source ${HOME}/.zsh/bobpp-theme.zsh
-
-# my custom plugin
-source ${HOME}/.zsh/iterm-title.zsh
+source ${HOME}/.zsh/*.zsh
 
 # Load host-specify configure
 if [[ -e "$HOME/.zshrc.mine" ]]; then
