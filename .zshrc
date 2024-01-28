@@ -4,6 +4,10 @@
 # basic shell configure
 [ -f $HOME/.shrc ] && source $HOME/.shrc
 
+has() {
+  type "$1" > /dev/null 2>&1
+}
+
 # zplug install plugins
 if [[ -f $HOME/.zplug/init.zsh ]]; then
   source $HOME/.zplug/init.zsh
@@ -64,18 +68,10 @@ setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt share_history
 
-# load peco functions
-if [[ -n $(which peco 2>/dev/null) ]]; then
-  for f (~/.zsh/peco-sources/*) source "${f}"
+# load other plugins
+source ${HOME}/.zsh/*.zsh
 
-  bindkey '^r' peco-select-history
-  bindkey '^g' peco-git-branch-checkout
-  alias ghqcd=peco-move-select-ghq
-  alias ghqcode=peco-code-select-ghq
-  alias cdp=peco-move-projects
-  alias codep=peco-open-code-projects
-fi
-
+# iTerm ssh colors
 if [ "${TERM_PROGRAM}" = "iTerm.app" ]; then
   function ssh-profile-change () {
     # set profile
@@ -90,20 +86,34 @@ if [ "${TERM_PROGRAM}" = "iTerm.app" ]; then
   alias ssh=ssh-profile-change
 fi
 
-# load direnv
-if [[ -n $(which direnv &> /dev/null) ]]; then
-  echo "test"
-  eval "$(direnv hook zsh)"
+# use 1password ssh-agent on mac
+if [[ -e ${HOME}/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ]]; then
+  export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 fi
 
-source ${HOME}/.zsh/*.zsh
+# load peco functions
+if has "peco" ; then
+  for f (~/.zsh/peco-sources/*) source "${f}"
+
+  bindkey '^r' peco-select-history
+  bindkey '^g' peco-git-branch-checkout
+  alias ghqcd=peco-move-select-ghq
+  alias ghqcode=peco-code-select-ghq
+  alias cdp=peco-move-projects
+  alias codep=peco-open-code-projects
+fi
+
+# load mise
+if has "mise" ; then
+  eval "$(mise activate zsh)"
+fi
+
+# Load company-specify configure
+if [[ -e "$HOME/.zshrc.company" ]]; then
+  source "$HOME/.zshrc.company"
+fi
 
 # Load host-specify configure
 if [[ -e "$HOME/.zshrc.mine" ]]; then
   source "$HOME/.zshrc.mine"
-fi
-
-# Load company specify configure
-if [[ -e "$HOME/.zshrc.company" ]]; then
-  source "$HOME/.zshrc.company"
 fi
