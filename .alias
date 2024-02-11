@@ -15,4 +15,3 @@ alias view='vim -R'
 if [ $os_architecture = "Darwin" ]; then
   alias scratchpad='code -n'
 fi
-

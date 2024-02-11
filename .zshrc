@@ -1,12 +1,25 @@
 # alias
 [ -f $HOME/.alias ] && source $HOME/.alias
 
-# basic shell configure
-[ -f $HOME/.shrc ] && source $HOME/.shrc
-
 has() {
   type "$1" > /dev/null 2>&1
 }
+
+# variables
+export PATH=~/.vim/bin:$PATH:$HOME/bin:$HOME/local/bin
+export LANG=en_US.UTF-8
+export JLESSCHARSET=japanese
+export EDITOR=vim
+export XDG_CONFIG_HOME="${HOME}/.config"
+
+# homebrew
+# TODO: x86_64 + arm64 両方の homebrew が入っている環境で $SHELL の `arch` を見て判断する実装
+if [[ -e /usr/local/bin/brew ]]; then
+  eval $(/usr/local/bin/brew shellenv)
+fi
+if [[ -e /opt/homebrew/bin/brew ]]; then
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
 
 # zplug install plugins
 if [[ -f $HOME/.zplug/init.zsh ]]; then
@@ -38,7 +51,7 @@ if [[ -f $HOME/.zplug/init.zsh ]]; then
     fi
   fi
 
-  zplug load --verbose
+  zplug load
 
   # Enhancd configure
   if zplug check "b4b4r07/enhancd"; then
@@ -89,6 +102,11 @@ fi
 # use 1password ssh-agent on mac
 if [[ -e ${HOME}/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ]]; then
   export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+fi
+
+# add fpath
+if [[ -e $(brew --prefix)/share/zsh/site-function ]]; then
+  fpath=( $(brew --prefix)/share/zsh/site-function "${fpath[@]}" )
 fi
 
 # load peco functions
