@@ -1,10 +1,38 @@
+# homebrew
+# TODO: x86_64 + arm64 両方の homebrew が入っている環境で $SHELL の `arch` を見て判断する実装
 if [[ -e /usr/local/bin/brew ]]; then
-    eval $(/usr/local/bin/brew shellenv)
+  eval $(/usr/local/bin/brew shellenv)
 fi
 if [[ -e /opt/homebrew/bin/brew ]]; then
-    eval $(/opt/homebrew/bin/brew shellenv)
+  eval $(/opt/homebrew/bin/brew shellenv)
 fi
+
+# Variables
 export PATH=~/.vim/bin:$PATH:$HOME/bin:$HOME/local/bin
 export LANG=en_US.UTF-8
 export JLESSCHARSET=japanese
 export EDITOR=vim
+export XDG_CONFIG_HOME="${HOME}/.config"
+
+# use 1password ssh-agent on mac
+if [[ -e ${HOME}/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock ]]; then
+  export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+fi
+
+# aliases
+os_architecture=$(uname)
+if [ $os_architecture = "Darwin" ]; then
+  alias ls='ls -G'
+elif [ $os_architecture = "Linux" ]; then
+  alias ls='ls -F --color=always'
+fi
+alias ll='ls -l'
+alias la='ls -la'
+alias vi=vim
+alias screen='screen -U'
+alias today="date '+%Y%m%d'"
+alias view='vim -R'
+
+if [ $os_architecture = "Darwin" ]; then
+  alias scratchpad='code -n'
+fi
