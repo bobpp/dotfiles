@@ -14,6 +14,9 @@ cask 'hot'
 cask 'ears'
 cask 'ankerwork'
 cask 'kindle'
+cask 'homebrew/cask-fonts/font-fira-code-nerd-font'
+cask 'microsoft-edge'
+cask 'postman'
 
 brew 'mise'
 brew 'ghq'
@@ -25,6 +28,8 @@ brew 'rcmdnk/rcmdnkpac/screenutf8'
 brew 'jq'
 brew 'yq'
 brew 'xcodes'
+brew 'starship'
+
 
 mas 'Day One Classic', id: 422304217
 mas 'Keynote', id: 409183694
